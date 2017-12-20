@@ -17,16 +17,20 @@ if sys.version[0] == '2':
     INSTALL_REQUIREMENTS.append('enum34')
 
 TESTING_REQUIREMENTS = [
+    'coverage',
+    'pycodestyle',
+    'pylint',
     'psutil',
     'pytest',
     'pytest-cov',
-    'pytest-pep8',
+    'pytest-pycodestyle',
     'pytest-pylint',
     'pytest-xdist',
     ]
 DEV_REQUIREMENTS = TESTING_REQUIREMENTS + [
     'ipython',
     'radon',
+    'sphinx',
     ]
 
 
