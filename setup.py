@@ -10,11 +10,7 @@ from setuptools.command.test import test as TestCommand
 
 INSTALL_REQUIREMENTS = [
     'click',
-    'future',
-    'six',
     ]
-if sys.version[0] == '2':
-    INSTALL_REQUIREMENTS.append('enum34')
 
 TESTING_REQUIREMENTS = [
     'coverage',
