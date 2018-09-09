@@ -1,6 +1,6 @@
-# --- Parameters
+# --- User Parameters
 
-# Package name
+# Package directory
 PKG_DIR=TODO
 
 # Testing parameters
@@ -18,6 +18,9 @@ PYTEST_PYLINT_OPTIONS=
 # Default target
 all: fast-test
 
+# Documentation
+# TODO
+
 # Testing
 fast-test fast-check:
 	make test PYTEST_OPTIONS="-x ${PYTEST_OPTIONS}"
@@ -26,6 +29,7 @@ full-test full-check:
 	make test PYTEST_PYLINT_OPTIONS="--pylint --pylint-error-types=EF";
 
 test check:
+	pycodestyle bin
 	pycodestyle setup.py
 	py.test ${PYTEST_SEARCH_PATHS} ${PYTEST_OPTIONS} ${PYTEST_PYLINT_OPTIONS}
 
@@ -38,6 +42,16 @@ coverage-report: .coverage
 coverage-html: .coverage
 	coverage html -d coverage
 
+# Code quality
+radon-cc:
+	radon cc ${PKG_DIR} bin -a
+radon-mi:
+	radon mi ${PKG_DIR} bin -s
+radon-mi-fail:
+	radon mi ${PKG_DIR} bin -nb -s
+radon-raw:
+	radon raw ${PKG_DIR} bin -s
+
 # Package distribution
 dist: clean
 	python setup.py sdist --formats=gztar,zip
@@ -47,7 +61,7 @@ clean:
 	find . -name "__pycache__" -delete  # remove compiled python directories
 	find . -name "*.pyc" -exec rm -f {} \;  # compiled python
 	rm -rf .cache  # pytest
-	rm -rf .coverage coverage # coverage
+	rm -rf .coverage .coverage.* coverage  # coverage
 	rm -rf dist *.egg-info  # distribution
 
 # Phony Targets
