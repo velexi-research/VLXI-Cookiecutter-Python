@@ -29,7 +29,7 @@ full-test full-check:
 	make test PYTEST_PYLINT_OPTIONS="--pylint --pylint-error-types=EF";
 
 test check:
-	pycodestyle bin
+	if [ -d bin ]; then pycodestyle bin; fi
 	pycodestyle setup.py
 	py.test ${PYTEST_SEARCH_PATHS} ${PYTEST_OPTIONS} ${PYTEST_PYLINT_OPTIONS}
 
