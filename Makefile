@@ -52,7 +52,7 @@ radon-mi-fail:
 radon-cc:
 	radon cc ${CODE_DIRS} --total-average
 radon-cc-fail:
-	radon cc ${CODE_DIRS} -nC -a
+	radon cc ${CODE_DIRS} -nC --average
 radon-raw:
 	radon raw ${CODE_DIRS} -s
 
