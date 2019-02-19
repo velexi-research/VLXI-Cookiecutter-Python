@@ -1,2 +1,5 @@
-# Install package (as editable) and its development dependencies (from setup.py)
+# Install package (as editable) and packages required for development.
+#
+# See SETUP_REQUIREMENTS, INSTALL_REQUIREMENTS, TEST_REQUIREMENTS, and
+# DEV_REQUIREMENTS in setup.py for the list of dependencies.
 -e .[dev]
