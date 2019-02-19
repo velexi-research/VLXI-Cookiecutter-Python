@@ -1,78 +1,73 @@
+"""
+------------------------------------------------------------------------------
+COPYRIGHT/LICENSE.  This file is part of the XYZ package.  It is subject
+to the license terms in the LICENSE file found in the top-level directory of
+this distribution.  No part of the XYZ package, including this file, may be
+copied, modified, propagated, or distributed except according to the terms
+contained in the LICENSE file.
+------------------------------------------------------------------------------
+"""
 # --- Imports
 
 import os
-import sys
+import re
 from setuptools import setup, find_packages
-from setuptools.command.test import test as TestCommand
 
 
 # --- Package requirements
 
+SETUP_REQUIREMENTS = ['pytest-runner']
 INSTALL_REQUIREMENTS = [
     'click',
     ]
 
-TESTING_REQUIREMENTS = [
+TEST_REQUIREMENTS = [
     'coverage',
+    'psutil',
     'pycodestyle',
     'pylint',
-    'psutil',
-    'pytest',
+    'pytest>=3.7',
     'pytest-cov',
     'pytest-pycodestyle',
     'pytest-pylint',
     'pytest-xdist',
     ]
-DEV_REQUIREMENTS = TESTING_REQUIREMENTS + [
+DEV_REQUIREMENTS = TEST_REQUIREMENTS + [
     'ipython',
     'radon',
     'sphinx',
     ]
 
 
-# --- pytest class
-
-class PyTest(TestCommand):
-    def finalize_options(self):
-        TestCommand.finalize_options(self)
-        self.test_args = []
-        self.test_suite = True
-
-    def run_tests(self):
-        import pytest
-        errcode = pytest.main(self.test_args)
-        sys.exit(errcode)
-
-
 # --- Package information
 
 # Package root directory
-pkg_root_dir = os.path.dirname(os.path.normcase(__file__))
+PKG_ROOT_DIR = os.path.dirname(os.path.normcase(__file__))
 
 # Version
-version_file = open(os.path.join(pkg_root_dir, 'VERSION'))
-version = version_file.read().strip()
+with open(os.path.join(PKG_ROOT_DIR, 'VERSION')) as version_file:
+    VERSION = version_file.read().strip()
 
 # Authors and author email
-authors_file = open(os.path.join(pkg_root_dir, 'AUTHORS'))
-author_lines = authors_file.readlines()
-authors = ', '.join([line.split('<')[0].strip() for line in author_lines])
-first_author_split = author_lines[0].split('<')
-if len(first_author_split) > 1:
-    author_email = first_author_split[1].split('>')[0].strip()
-else:
-    author_email = ''
+with open(os.path.join(PKG_ROOT_DIR, 'AUTHORS')) as authors_file:
+    AUTHORS = [line.strip() for line in authors_file.readlines()]
+    if AUTHORS:
+        AUTHOR_EMAIL = re.match('.*<(.*)>.*', AUTHORS[0]).group(1)
+    else:
+        AUTHOR_EMAIL = ''
 
+    # Convert AUTHORS list to string
+    AUTHORS = ', '.join(author.split('<')[0].strip() for author in AUTHORS)
 
 # --- setup()
 
 setup(
     # Package information
     name='TODO',
-    version=version,
+    version=VERSION,
     license='Apache Software License',
-    author=authors,
-    author_email=author_email,
+    author=AUTHORS,
+    author_email=AUTHOR_EMAIL,
     description='TODO',
     long_description=open('README.markdown').read(),
     keywords='TODO',
@@ -83,10 +78,11 @@ setup(
     scripts=[],
 
     # Package requirements
+    setup_requires=SETUP_REQUIREMENTS,
     install_requires=INSTALL_REQUIREMENTS,
-    tests_require=TESTING_REQUIREMENTS,
+    tests_require=TEST_REQUIREMENTS,
     extras_require={
         'dev': DEV_REQUIREMENTS,
-        'testing': TESTING_REQUIREMENTS,
+        'test': TEST_REQUIREMENTS,
     }
 )
