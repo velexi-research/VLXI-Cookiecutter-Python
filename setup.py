@@ -17,6 +17,7 @@ from setuptools import setup, find_packages
 # --- Package requirements
 
 SETUP_REQUIREMENTS = ['pytest-runner']
+
 INSTALL_REQUIREMENTS = [
     'click',
     ]
