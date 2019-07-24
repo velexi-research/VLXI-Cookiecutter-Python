@@ -3,11 +3,11 @@
 # compiled source
 *.pyc
 
-# setuptools files
+# setuptools
 dist/*
 *.egg-info
 
-# testing files
+# testing
 .cache
 .coverage
 .coverage.*
@@ -15,11 +15,11 @@ dist/*
 
 # --- Miscellaneous
 
-# autoenv files
+# autoenv
 .env
 
-# temporary files
+# vim
 .*.swp
 
-# macOS files
+# macOS
 .DS_Store*
