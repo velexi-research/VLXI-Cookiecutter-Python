@@ -1,12 +1,11 @@
-# temporary files
-.*.swp
+# --- Python files
+
+# compiled source
+*.pyc
 
 # setuptools files
 dist/*
 *.egg-info
-
-# compiled source
-*.pyc
 
 # testing files
 .cache
@@ -14,8 +13,13 @@ dist/*
 .coverage.*
 .pytest_cache
 
+# --- Miscellaneous
+
 # autoenv files
 .env
+
+# temporary files
+.*.swp
 
 # macOS files
 .DS_Store*
