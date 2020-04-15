@@ -33,7 +33,7 @@ full-test full-check:
 
 test check:
 	pycodestyle setup.py
-	py.test ${PYTEST_SEARCH_PATHS} ${PYTEST_OPTIONS} ${PYTEST_PYLINT_OPTIONS}
+	py.test ${PYTEST_OPTIONS} ${PYTEST_PYLINT_OPTIONS} ${PYTEST_SEARCH_PATHS}
 
 .coverage:
 	-make test
