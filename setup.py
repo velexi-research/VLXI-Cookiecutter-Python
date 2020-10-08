@@ -64,15 +64,15 @@ with open(os.path.join(PKG_ROOT_DIR, 'AUTHORS')) as authors_file:
 
 setup(
     # Package information
-    name='TODO',
+    name='PLACEHOLDER',
     version=VERSION,
     license='Apache Software License',
     author=AUTHORS,
     author_email=AUTHOR_EMAIL,
-    description='TODO',
+    description='PLACEHOLDER',
     long_description=open('README.markdown').read(),
-    keywords='TODO',
-    url='TODO',
+    keywords='PLACEHOLDER',
+    url='PLACEHOLDER',
 
     # Package construction
     packages=find_packages(),

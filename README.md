@@ -22,7 +22,7 @@ Contents
 
 ## 1. Overview
 
-TODO
+PLACEHOLDER
 
 ### 1.1. License
 
@@ -47,13 +47,13 @@ variables in the `setup.py` file.
 
 ## 3. Documentation
 
-TODO
+PLACEHOLDER
 
 ------------------------------------------------------------------------------
 
 ## 4. Known Issues
 
-TODO
+PLACEHOLDER
 
 ------------------------------------------------------------------------------
 
