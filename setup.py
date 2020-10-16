@@ -70,7 +70,7 @@ setup(
     author=AUTHORS,
     author_email=AUTHOR_EMAIL,
     description='PLACEHOLDER',
-    long_description=open('README.markdown').read(),
+    long_description=open('README.md').read(),
     keywords='PLACEHOLDER',
     url='PLACEHOLDER',
 
