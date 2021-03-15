@@ -19,7 +19,7 @@ from setuptools import setup, find_packages
 SETUP_REQUIREMENTS = ['pytest-runner']
 
 INSTALL_REQUIREMENTS = [
-    'click',
+    'typer[all]',
     ]
 
 TEST_REQUIREMENTS = [
@@ -27,7 +27,7 @@ TEST_REQUIREMENTS = [
     'psutil',
     'pycodestyle',
     'pylint',
-    'pytest>=3.7',
+    'pytest>=3.9',
     'pytest-cov',
     'pytest-pycodestyle',
     'pytest-pylint',
@@ -64,7 +64,7 @@ with open(os.path.join(PKG_ROOT_DIR, 'AUTHORS')) as authors_file:
 
 setup(
     # Package information
-    name='PLACEHOLDER',
+    name='{{ PKG_NAME }}',
     version=VERSION,
     license='Apache Software License',
     author=AUTHORS,
