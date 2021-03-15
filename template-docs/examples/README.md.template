@@ -8,7 +8,9 @@ Contents
 
 1. [Overview][#1]
 
-    1.1. [License][#4]
+    1.1. [Package Contents][#1.1]
+
+    1.2. [License][#1.2]
 
 2. [Installation][#2]
 
@@ -24,7 +26,11 @@ Contents
 
 PLACEHOLDER
 
-### 1.1. License
+### 1.1. Package Contents
+
+PLACEHOLDER
+
+### 1.2. License
 
 See the LICENSE file for copyright and license information.
 
@@ -36,7 +42,7 @@ See the LICENSE file for copyright and license information.
 
 #### Base Requirements
 
-* Python (>=3.4)
+* Python (>=3.7)
 
 #### Python Packages ####
 
@@ -60,7 +66,8 @@ PLACEHOLDER
 [-----------------------------INTERNAL LINKS-----------------------------]: #
 
 [#1]: #1-overview
-[#1.1]: #11-license
+[#1.1]: #11-package-contents
+[#1.2]: #12-license
 
 [#2]: #2-installation
 [#2.1]: #21-software-dependencies
