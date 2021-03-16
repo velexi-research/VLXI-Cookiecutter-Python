@@ -69,10 +69,10 @@ setup(
     license='Apache Software License',
     author=AUTHORS,
     author_email=AUTHOR_EMAIL,
-    description='PLACEHOLDER',
+    description='{{ DESCRIPTION }}',
     long_description=open('README.md').read(),
-    keywords='PLACEHOLDER',
-    url='PLACEHOLDER',
+    keywords='{{ KEYWORDS }}',
+    url='{{ URL }}',
 
     # Package construction
     packages=find_packages(),

@@ -1,7 +1,7 @@
 # --- User Parameters
 
 # Package directory
-PKG_DIR=TODO
+PKG_DIR={{ PKG_NAME }}
 
 # Testing parameters
 NPROCS=auto
