@@ -37,7 +37,6 @@ Python package.
     README.md.template
     RELEASE-NOTES.md.template
     LICENSE.template
-    LICENSE-THIRD-PARTY.template
     AUTHORS.template
     VERSION.template
     Makefile.template
