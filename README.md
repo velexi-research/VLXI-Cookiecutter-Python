@@ -42,10 +42,10 @@ Python package.
     VERSION.template
     Makefile.template
     setup.py.template
-    setup.cfg
     requirements.txt
     requirements-dev.txt
     requirements-test.txt
+    setup.cfg
     bin/
     docs/
     template-docs/
@@ -68,12 +68,12 @@ Python package.
 
     * `setup.py.template`: template for `setup.py` file for Python package
 
-* `setup.cfg`: package configuration file used by `setup.py`, `pytest`,
-  `coverage`, etc.
-
 * `requirements.txt`, `requirements-dev.txt`, `requirements-test.txt`:
   requirements files containing list of Python packages required for
   usage, development, and testing, respectively
+
+* `setup.cfg`: package configuration file used by `setup.py`, `pytest`,
+  `coverage`, etc.
 
 * `bin`: directory where executable programs (e.g., scripts, CLI tools) for
   the package should be placed
