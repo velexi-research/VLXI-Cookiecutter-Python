@@ -60,9 +60,10 @@ Python package.
 
 * `*.template`: template files for the package
 
-    * Template files are indicated by `template` suffix. These files are
-      intended to simplify the set up of the dataset repository. They should
-      be renamed to remove the `template` suffix.
+    * Template files are indicated by the `template` suffix and contain
+      template parameters denoted by double braces (e.g. `{{ PKG_NAME }}`).
+      Template files are intended to simplify the set up of the package. When
+      used, they should be renamed to remove the `template` suffix.
 
     * `Makefile.template`: template for Makefile defining a collection of
       useful commands to maintain software (e.g., `test`, `clean`)
@@ -109,19 +110,21 @@ in the `template-docs` and root directories of this package.
 
     * Create directory for Python package.
 
-    * Create empty `__init__.py` file in the package directory.
+    * Use `template-docs/extras/pkg__init__.py.template` to create
+      `__init__.py` for the package. Replace template parameters with
+      package-appropriate values.
 
 3. Construct valid `setup.py` and `Makefile` files.
 
-    * Rename `setup.py.template` to `setup.py` and fill in template parameters
-      indicated by double braces (e.g. `{{ PKG_NAME }}`).
+    * Rename `setup.py.template` to `setup.py` and replace all template
+      parameters with package-appropriate values.
 
     * Rename `Makefile.template` to `Makefile` and replace `{{ PKG_NAME }}`
       with the package name.
 
-4. Update the contents of all remaining template files and rename them with the
-   `template` suffixed removed (overwrite the original `README.md` and
-   `LICENSE` files).
+4. Rename all of the remaining template files with the `template` suffix
+   removed (overwrite the original `README.md` and `LICENSE` files) and
+   replace all template parameters with package-appropriate values.
 
 ### 2.2. Running Tests
 
