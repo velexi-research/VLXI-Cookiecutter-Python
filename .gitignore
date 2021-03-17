@@ -5,7 +5,8 @@
 
 # setuptools
 dist/*
-*.egg-info
+/.eggs
+/*.egg-info
 
 # testing
 .cache
