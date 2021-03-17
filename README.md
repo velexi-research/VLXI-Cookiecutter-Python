@@ -63,8 +63,10 @@ Python package.
       intended to simplify the set up of the dataset repository. They should
       be renamed to remove the `template` suffix.
 
-* `Makefile`: Makefile defining a collection of useful commands to maintain
-  software (e.g., `test`, `clean`)
+    * `Makefile.template`: template for Makefile defining a collection of
+      useful commands to maintain software (e.g., `test`, `clean`)
+
+    * `setup.py.template`: template for `setup.py` file for Python package
 
 * `setup.cfg`: package configuration file used by `setup.py`, `pytest`,
   `coverage`, etc.
