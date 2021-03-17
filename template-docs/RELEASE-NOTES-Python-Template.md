@@ -1,6 +1,12 @@
 Python Package Template Release Notes
 =====================================
 -------------------------------------------------------------------------------
+Release Notes: v0.2.1 (2021-??-??)
+==================================
+* Add template for package-level `__init__.py` file.
+* Improve documentation.
+
+-------------------------------------------------------------------------------
 Release Notes: v0.2.0 (2021-03-15)
 ==================================
 * Improve package organization and structure.
