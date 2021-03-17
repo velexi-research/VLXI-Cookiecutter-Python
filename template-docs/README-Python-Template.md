@@ -48,6 +48,7 @@ Python package.
     setup.cfg
     bin/
     docs/
+    spikes/
     template-docs/
     template-docs/extras
 
