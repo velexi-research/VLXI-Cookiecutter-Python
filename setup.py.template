@@ -64,15 +64,15 @@ with open(os.path.join(PKG_ROOT_DIR, 'AUTHORS')) as authors_file:
 
 setup(
     # Package information
-    name='{{ PKG_NAME }}',
+    name="{{ PKG_NAME }}",
     version=VERSION,
-    license='Apache Software License',
+    license="Apache Software License",
     author=AUTHORS,
     author_email=AUTHOR_EMAIL,
-    description='{{ DESCRIPTION }}',
+    description="{{ DESCRIPTION }}",
     long_description=open('README.md').read(),
-    keywords='{{ KEYWORDS }}',
-    url='{{ URL }}',
+    keywords="{{ KEYWORDS }}",
+    url="{{ URL }}",
 
     # Package construction
     packages=find_packages(),
