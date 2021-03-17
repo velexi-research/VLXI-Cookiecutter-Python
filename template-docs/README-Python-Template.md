@@ -1,4 +1,4 @@
-Python Package Template (v0.2.0)
+Python Package Template (v0.2.1)
 ================================
 
 ___Authors___  
