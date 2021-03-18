@@ -42,7 +42,7 @@ def _update_pkg_info(pkg_info):
         original package info values
 
     Return values
-    ----------
+    -------------
     pkg_info : dict
         updated package info values
     """
