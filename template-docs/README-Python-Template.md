@@ -1,5 +1,5 @@
-Python Package Template (v0.2.1)
-================================
+Python Package Template (0.2.1)
+===============================
 
 ___Authors___  
 Kevin T. Chu `<kevin@velexi.com>`
