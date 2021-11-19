@@ -83,7 +83,7 @@ Python package.
 
 * `spikes`: directory for experimental code snippets
 
-* `template-docs`: directory containing documentation this package template
+* `template-docs`: directory containing documentation for this package template
 
 * `template-docs/extras`: directory containing example and template files
 
