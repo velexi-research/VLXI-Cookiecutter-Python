@@ -89,8 +89,8 @@ Python package.
 
 ### 1.2. License
 
-The contents of this template are covered under the `LICENSE` file contained
-in the `template-docs` and root directories of this package.
+The contents of this template are covered under the `LICENSE-Python-Template`
+file contained in the `template-docs` directory of this package.
 
 ------------------------------------------------------------------------------
 
