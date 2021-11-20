@@ -1,7 +1,9 @@
-Python Package Template (0.2.1)
-===============================
+Python Package Template
+=======================
 
-___Authors___  
+__Version__: 0.2.1
+
+__Authors__  
 Kevin T. Chu `<kevin@velexi.com>`
 
 ------------------------------------------------------------------------------
