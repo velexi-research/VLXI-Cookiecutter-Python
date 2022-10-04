@@ -1,0 +1,44 @@
+# --- Python files
+
+# compiled code
+__pycache__/
+*.py[cod]
+
+# testing
+htmlcov/
+.cache
+.coverage
+.coverage.*
+.pytest_cache
+.tox/
+
+# --- Environments
+
+# direnv
+.direnv
+.envrc
+
+# conda
+.conda
+
+# common manually-created Python virtual environments
+.venv
+
+# --- Code editors
+
+# VS Code
+.vscode/
+
+# Pycharm
+.idea
+
+# Spyder
+.spyproject/
+
+# vim
+*.sw[po]
+
+# --- Miscellaneous
+
+# macOS
+.DS_Store*

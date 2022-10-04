@@ -1,5 +1,0 @@
-# Install package (as editable) and packages required to run tests.
-#
-# See SETUP_REQUIREMENTS, INSTALL_REQUIREMENTS and TEST_REQUIREMENTS in
-# setup.py for the list of dependencies.
--e .[test]
