@@ -29,6 +29,9 @@ if __name__ == "__main__":
 
     # --- Update project template files based on user configuration
 
+    if "{{ cookiecutter.license }}" != "Apache License 2.0":
+        _remove_file("NOTICE")
+
     # --- Initialize Git repository project
 
     os.chdir(_PROJECT_DIRECTORY)
