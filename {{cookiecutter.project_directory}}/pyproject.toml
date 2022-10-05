@@ -42,6 +42,19 @@ norecursedirs = spikes
 [tool.coverage.report]
 omit = "*/tests/*"
 
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = true
+envlist = py27, py36
+
+[testenv]
+whitelist_externals = poetry
+commands =
+    poetry install -v
+    poetry run pytest tests/
+"""
+
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
