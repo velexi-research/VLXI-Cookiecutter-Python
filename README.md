@@ -42,6 +42,8 @@ distribution-ready, and contains a standard set of software development tools.
 * Modern Python package structure (e.g., package metadata specified in
  `pyproject.toml`)
 
+* Continuous integration (CI) based on GitHub Actions
+
 * Quick references for common software components (e.g., [Poetry][poetry],
   [pdoc][pdoc], etc.)
 
@@ -230,7 +232,7 @@ dependencies for the template.
   * Restore the templated values in the `[tool.poetry]` section to the
     following:
 
-    ```toml
+    ```jinja2
     [tool.poetry]
     name = "{{ cookiecutter.project_name }}"
     version = "0.1.0"
