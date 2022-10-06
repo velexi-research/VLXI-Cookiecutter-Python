@@ -233,7 +233,7 @@ dependencies for the template.
   * Restore the templated values in the `[tool.poetry]` section to the
     following:
 
-    ```jinja2
+    ```jinja
     [tool.poetry]
     name = "{{ cookiecutter.project_name }}"
     version = "0.1.0"
