@@ -1,0 +1,60 @@
+[tool.poetry]
+name = "{{ cookiecutter.project_name }}"
+version = "0.1.0"
+description = ""
+license = "{% if cookiecutter.license == 'Apache License 2.0' %}Apache-2.0{% elif cookiecutter.license == 'BSD-3-Clause License' %}BSD-3-Clause{% elif cookiecutter.license == 'MIT License' %}MIT{% endif %}"
+readme = "README.md"
+authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.group.docs.dependencies]
+pdoc3 = "^0.10.0"
+
+[tool.poetry.group.test.dependencies]
+coverage = "^6.5.0"
+flake8 = "^5.0.4"
+pylint = "^2.15.3"
+pytest = "^7.1.3"
+pytest-cov = "^4.0.0"
+pytest-flake8 = "^1.1.1"
+pytest-xdist = "^2.5.0"
+radon = "^5.1.0"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra --doctest-modules --pycodestyle --cov-report="
+#addopts = "-ra --doctest-modules --pycodestyle --cov-report=term-missing"
+python_files = "test_*.py
+testpaths = [
+    "src",
+    "tests"
+]
+doctest_optionflags = [
+    "NORMALIZE_WHITESPACE",
+    "IGNORE_EXCEPTION_DETAIL",
+    "ALLOW_UNICODE",
+    "ALLOW_BYTES",
+]
+norecursedirs = spikes
+
+[tool.coverage.report]
+omit = "*/tests/*"
+
+[tool.tox]
+legacy_tox_ini = """
+[tox]
+isolated_build = true
+envlist = py27, py36
+
+[testenv]
+whitelist_externals = poetry
+commands =
+    poetry install -v
+    poetry run pytest tests/
+"""
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

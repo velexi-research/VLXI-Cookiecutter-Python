@@ -1,4 +1,0 @@
-# Install package (as editable) and packages required for basic usage.
-#
-# See INSTALL_REQUIREMENTS in setup.py for the list of dependencies.
--e .
