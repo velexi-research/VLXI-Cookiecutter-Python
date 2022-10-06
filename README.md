@@ -233,7 +233,8 @@ dependencies for the template.
   * Restore the templated values in the `[tool.poetry]` section to the
     following:
 
-    ~~~ jinja
+    ```jinja
+    {% raw %}
     [tool.poetry]
     name = "{{ cookiecutter.project_name }}"
     version = "0.1.0"
@@ -241,7 +242,8 @@ dependencies for the template.
     license = "{% if cookiecutter.license == 'Apache License 2.0' %}Apache-2.0{% elif cookiecutter.license == 'BSD-3-Clause License' %}BSD-3-Clause{% elif cookiecutter.license == 'MIT License' %}MIT{% endif %}"
     readme = "README.md"
     authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
-    ~~~
+    {% endraw %}
+    ```
 
 * Update `{{cookiecutter.project_directory}}/poetry.lock`.
 
