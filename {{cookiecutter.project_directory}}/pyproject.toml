@@ -26,7 +26,7 @@ radon = "^5.1.0"
 minversion = "6.0"
 addopts = "-ra --doctest-modules --pycodestyle --cov-report="
 #addopts = "-ra --doctest-modules --pycodestyle --cov-report=term-missing"
-python_files = "test_*.py
+python_files = "test_*.py"
 testpaths = [
     "src",
     "tests"
@@ -46,7 +46,7 @@ omit = "*/tests/*"
 legacy_tox_ini = """
 [tox]
 isolated_build = true
-envlist = py27, py36
+envlist = py37, py38, py39, py310
 
 [testenv]
 whitelist_externals = poetry
