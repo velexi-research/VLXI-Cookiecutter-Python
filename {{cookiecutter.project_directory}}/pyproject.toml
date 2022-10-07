@@ -55,7 +55,7 @@ envlist = py37, py38, py39, py310
 whitelist_externals = poetry
 commands =
     poetry install -v
-    poetry run pytest tests/
+    poetry run pytest -n auto --cov-report=term-missing
 """
 
 [build-system]
