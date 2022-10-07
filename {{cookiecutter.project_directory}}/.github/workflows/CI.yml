@@ -105,6 +105,6 @@ jobs:
 
         uses: codecov/codecov-action@v3
         with:
-          # token: ${{ secrets.CODECOV_TOKEN }}  # Only required for private repositories
+          # token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}  # Only required for private repositories
           file: ./coverage.xml
           fail_ci_if_error: true
