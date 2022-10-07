@@ -9,9 +9,6 @@ authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
 [tool.poetry.dependencies]
 python = "^3.8"
 
-[tool.poetry.group.docs.dependencies]
-pdoc3 = "^0.10.0"
-
 [tool.poetry.group.test.dependencies]
 coverage = "^6.5.0"
 flake8 = "<5.0.0"  # Unpin after compatibility with pytest-flake8 is fixed
@@ -22,6 +19,9 @@ pytest-flake8 = "^1.1.1"
 pytest-xdist = "^2.5.0"
 radon = "^5.1.0"
 tox = "^3.26.0"
+
+[tool.poetry.group.docs.dependencies]
+pdoc = "^12.2.0"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
