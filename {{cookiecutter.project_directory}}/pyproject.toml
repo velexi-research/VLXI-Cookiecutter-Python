@@ -14,18 +14,19 @@ pdoc3 = "^0.10.0"
 
 [tool.poetry.group.test.dependencies]
 coverage = "^6.5.0"
-flake8 = "^5.0.4"
+flake8 = "<5.0.0"  # Unpin after compatibility with pytest-flake8 is fixed
 pylint = "^2.15.3"
 pytest = "^7.1.3"
 pytest-cov = "^4.0.0"
 pytest-flake8 = "^1.1.1"
 pytest-xdist = "^2.5.0"
 radon = "^5.1.0"
+tox = "^3.26.0"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-ra --doctest-modules --pycodestyle --cov-report="
-#addopts = "-ra --doctest-modules --pycodestyle --cov-report=term-missing"
+addopts = "-ra --doctest-modules --flake8 --cov-report="
+#addopts = "-ra --doctest-modules --flake8 --cov-report=term-missing"
 python_files = "test_*.py"
 testpaths = [
     "src",
@@ -40,7 +41,7 @@ doctest_optionflags = [
 norecursedirs = ["spikes"]
 
 [tool.coverage.report]
-omit = "*/tests/*"
+omit = ["*/tests/*"]
 
 [tool.tox]
 legacy_tox_ini = """
