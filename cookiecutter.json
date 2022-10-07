@@ -2,6 +2,8 @@
     "project_name": "Project Name",
     "project_directory":
     "{{cookiecutter.project_name.lower().replace(' ', '-')}}",
+    "package_name":
+    "{{cookiecutter.project_name.lower().replace(' ', '_')}}",
     "author": "Your Name",
     "email": "{{ cookiecutter.author.lower().replace(' ', '.') }}@example.com",
     "license": ["Apache License 2.0",
