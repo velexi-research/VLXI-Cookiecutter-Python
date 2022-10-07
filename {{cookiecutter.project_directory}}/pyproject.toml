@@ -25,8 +25,7 @@ tox = "^3.26.0"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-ra --doctest-modules --flake8 --cov-report="
-#addopts = "-ra --doctest-modules --flake8 --cov-report=term-missing"
+addopts = "-ra --doctest-modules --flake8 --cov"
 python_files = "test_*.py"
 testpaths = [
     "src",
@@ -39,6 +38,9 @@ doctest_optionflags = [
     "ALLOW_BYTES",
 ]
 norecursedirs = ["spikes"]
+
+[tool.coverage.run]
+source = ["src/"]
 
 [tool.coverage.report]
 omit = ["*/tests/*"]
