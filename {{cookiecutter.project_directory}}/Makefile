@@ -7,6 +7,10 @@
 SRC_DIR=src
 CODE_DIRS=${SRC_DIR} tests
 
+# Package directories
+PKG_DIR=src/{{cookiecutter.package_name}}
+DOCS_DIR=docs/{{cookiecutter.package_name}}
+
 # Testing parameters
 NPROCS=auto
 
@@ -78,7 +82,7 @@ radon-raw:
 
 ## Generate API documentation in HTML format
 docs:
-	pdoc --html -o docs/api ${SRC_DIR}
+	pdoc -o ${DOCS_DIR} ${PKG_DIR}
 
 # --- Utility rules
 
@@ -92,7 +96,7 @@ clean:
 	rm -rf .cache  # pytest
 	rm -rf .coverage .coverage.* coverage htmlcov  # coverage
 	find . -name "*.log" -exec rm -f {} \;  # log files
-	rm -rf docs/api  # generated API documentation
+	rm -rf ${DOCS_DIR}  # generated API documentation
 
 # --- Makefile Self-Documentation
 
