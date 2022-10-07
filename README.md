@@ -289,6 +289,4 @@ dependencies for the template.
 
 [pdoc]: https://pdoc.dev/
 
-[pdoc3]: https://pdoc3.github.io/pdoc/
-
 [poetry]: https://python-poetry.org/
