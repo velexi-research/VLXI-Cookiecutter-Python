@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "{{ cookiecutter.project_name }}"
+name = "{{cookiecutter.project_name.replace(' ', '-')}}"
 version = "0.1.0"
 description = ""
 license = "{% if cookiecutter.license == 'Apache License 2.0' %}Apache-2.0{% elif cookiecutter.license == 'BSD-3-Clause License' %}BSD-3-Clause{% elif cookiecutter.license == 'MIT License' %}MIT{% endif %}"
@@ -7,26 +7,30 @@ readme = "README.md"
 authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.7.2"
+
+[tool.poetry.group.code-quality.dependencies]
+black = "^22.10.0"
+flake8 = "<5.0.0"  # Unpin after compatibility with pytest-flake8 is fixed
+pre-commit = "^2.20.0"
+radon = "^5.1.0"
 
 [tool.poetry.group.docs.dependencies]
-pdoc3 = "^0.10.0"
+pdoc = "^12.2.0"
 
 [tool.poetry.group.test.dependencies]
 coverage = "^6.5.0"
-flake8 = "^5.0.4"
 pylint = "^2.15.3"
 pytest = "^7.1.3"
 pytest-cov = "^4.0.0"
 pytest-flake8 = "^1.1.1"
 pytest-xdist = "^2.5.0"
-radon = "^5.1.0"
+tox = "^3.26.0"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-ra --doctest-modules --pycodestyle --cov-report="
-#addopts = "-ra --doctest-modules --pycodestyle --cov-report=term-missing"
-python_files = "test_*.py
+addopts = "-ra --doctest-modules --flake8 --cov"
+python_files = "test_*.py"
 testpaths = [
     "src",
     "tests"
@@ -37,22 +41,25 @@ doctest_optionflags = [
     "ALLOW_UNICODE",
     "ALLOW_BYTES",
 ]
-norecursedirs = spikes
+norecursedirs = ["docs", "extras", "spikes"]
+
+[tool.coverage.run]
+source = ["src/"]
 
 [tool.coverage.report]
-omit = "*/tests/*"
+omit = ["*/tests/*"]
 
 [tool.tox]
 legacy_tox_ini = """
 [tox]
 isolated_build = true
-envlist = py27, py36
+envlist = py37, py38, py39, py310
 
 [testenv]
 whitelist_externals = poetry
 commands =
     poetry install -v
-    poetry run pytest tests/
+    poetry run pytest -n auto --cov-report=term-missing
 """
 
 [build-system]
