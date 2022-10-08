@@ -96,7 +96,7 @@ jobs:
       # --- Upload coverage statistics to codecov.io
 
       - name: Upload code coverage data to codecov.io
-        # Only run for 'main' branch running on 'Linux' with the latest version of Julia
+        # Only run for 'main' branch running on 'Linux' with the latest version of Python
         if: |
             github.ref_name == 'main' &&
             runner.os == 'Linux' &&
@@ -159,6 +159,8 @@ jobs:
         run: poetry run make docs
 
       - name: Deploy documentation
+        # Only run when the 'main' branch is updated
+        if: github.ref_name == 'main' && !startsWith(github.ref, 'refs/pull/')
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: docs/{{cookiecutter.package_name}}
