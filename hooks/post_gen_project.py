@@ -37,8 +37,14 @@ if __name__ == "__main__":
 
     # --- Update project template files based on user configuration
 
+    # Remove NOTICE file if license is not Apache License 2.0
     if "{{ cookiecutter.license }}" != "Apache License 2.0":
         _remove_file("NOTICE")
+
+    # Force LICENSE file to be an empty file if an empty license is selected
+    if "{{ cookiecutter.license }}" == "Empty license file":
+        _remove_file("LICENSE")
+        Path(_PROJECT_DIRECTORY, "LICENSE").touch()
 
     # --- Set up Git repository for project
 
