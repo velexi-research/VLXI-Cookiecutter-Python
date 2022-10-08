@@ -18,7 +18,7 @@ _PROJECT_DIRECTORY = Path.cwd()
 
 def _remove_file(*filepath):
     """
-    Remove file.
+    Remove file relative to _PROJECT_DIRECTORY.
     """
     try:
         Path(_PROJECT_DIRECTORY, *filepath).unlink()
@@ -30,14 +30,17 @@ def _remove_file(*filepath):
 
 if __name__ == "__main__":
 
+    # --- Preparations
+
+    # Change to project directory
+    os.chdir(_PROJECT_DIRECTORY)
+
     # --- Update project template files based on user configuration
 
     if "{{ cookiecutter.license }}" != "Apache License 2.0":
         _remove_file("NOTICE")
 
     # --- Set up Git repository for project
-
-    os.chdir(_PROJECT_DIRECTORY)
 
     # Initialize Git repository
     cmd = ["git", "init"]
