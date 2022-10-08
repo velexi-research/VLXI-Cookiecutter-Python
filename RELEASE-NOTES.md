@@ -1,5 +1,26 @@
-Release Notes: Python Package Template
-======================================
+Velexi Python Package Cookiecutter Release Notes
+================================================
+
+-------------------------------------------------------------------------------
+0.3.0 (2022-10-08)
+==================
+## Cookiecutter Template Enhancements
+* Restructure project to be a cookiecutter instead of a GitHub template
+  repository.
+* Migrate to pyproject.toml for specifying project metadata and tool
+  configuration.
+* Add and streamline integrations with code quality tools: pytest, coverage,
+  flake8, black, tox, git pre-commit hooks.
+* Add GitHub Actions workflows for continuous integration (multi-environment
+  testing and documentation deployment to GitHub Pages).
+* Update all files to pass all pre-commit checks.
+* Improve application of Apache License 2.0.
+
+## Cookiecutter Development Enhancements
+* Add integrations with tools for supporting code quality: black and git
+  pre-commit hooks.
+* Update all files to pass all pre-commit checks.
+* Improve application of Apache License 2.0.
 
 -------------------------------------------------------------------------------
 0.2.1 (2021-08-31)
