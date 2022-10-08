@@ -6,11 +6,13 @@ repos:
       entry: black
       language: python
       types: [python]
+      exclude: ^{{cookiecutter.project_directory}}
     - id: flake8
       name: flake8
       entry: flake8
       language: python
       types: [python]
+      exclude: ^{{cookiecutter.project_directory}}
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v2.5.0
     hooks:
@@ -20,3 +22,4 @@ repos:
     - id: mixed-line-ending
     - id: no-commit-to-branch
     - id: pretty-format-json
+      args: [--no-sort-keys]
