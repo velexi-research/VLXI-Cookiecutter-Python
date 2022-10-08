@@ -222,7 +222,9 @@ contained in the `NOTICE` file.
         * Allow specified actions and reusable workflows.
 
           ```
-          snok/install-poetry,codecov/*,JamesIves/github-pages-deploy-action
+          JamesIves/github-pages-deploy-action*,
+          codecov/codecov-action*,
+          snok/install-poetry*,
           ```
 
    3. Configure "Workflow permissions".
