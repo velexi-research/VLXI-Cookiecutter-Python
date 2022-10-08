@@ -63,8 +63,3 @@ if __name__ == "__main__":
         # Change back to "main" branch
         cmd = ["git", "checkout", "main"]
         subprocess.run(cmd, check=True)
-
-    # --- Install Git pre-commit hooks.
-
-    cmd = ["pre-commit", "install"]
-    subprocess.run(cmd, check=True)
