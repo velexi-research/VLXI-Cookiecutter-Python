@@ -15,9 +15,11 @@ Table of Contents
 
     1.2. [License][#1.2]
 
-2. [Setting Up a New Project][#2]
+2. [Usage][#2]
 
-   2.1. [Instructions][#2.1]
+   2.1 [Setting Up a New Project][#2.1]
+
+   2.2 [Deploying Package Documentation to GitHub Pages][#2.2]
 
 3. [Contributor Notes][#3]
 
@@ -34,23 +36,34 @@ Table of Contents
 ## 1. Overview
 
 The [Velexi Python Project Cookiecutter][vlxi-cookiecutter-python] is intended
-to streamline the process of setting up a Python project that is package-ready,
-distribution-ready, and contains a standard set of software development tools.
+to streamline the process of setting up a Python project that
+
+* encourages the creation of high-quality software,
+
+* promotes developer efficiency, and
+
+* is distribution-ready.
 
 ### Features
 
-* Modern Python package structure (e.g., package metadata specified in
- `pyproject.toml`)
+* Modern Python package structure (e.g., package metadata and tool configuration
+  specified in [`pyproject.toml`][python-packaging])
 
-* Continuous integration (CI) based on GitHub Actions
+* Automated testing and coverage reporting framework (e.g., [pytest][pytest],
+  [coverage][coverage], [tox][tox])
 
-* Quick references for common software components (e.g., [Poetry][poetry],
+* Integration with code quality tools (e.g., [pre-commit][pre-commit],
+  [black][black], [flake8][flake8], [radon][radon])
+
+* Continuous integration (CI) via GitHub Actions (e.g., testing,
+  documentation deployment)
+
+* Quick references for software development tools (e.g., [Poetry][poetry],
   [pdoc][pdoc], etc.)
 
 * Python package and dependency management using [Poetry][poetry]
 
-* Directory-based shell (and Python) environment isolation for systems with
-  `direnv` installed
+* Directory-based shell and Python environment isolation with [direnv][direnv]
 
 ### 1.1. Repository Contents
 
@@ -66,8 +79,8 @@ distribution-ready, and contains a standard set of software development tools.
 ├── docs/              <- cookiecutter documentation
 ├── extras/            <- additional files that may be useful for cookiecutter
 │                         development
-├── hooks/             <- cookiecutter scripts that run before or after project
-│                         generation
+├── hooks/             <- cookiecutter scripts that run before and/or after
+│                         project generation
 ├── spikes/            <- experimental code
 └── {{cookiecutter.project_directory}}/  <- cookiecutter template
 ```
@@ -80,18 +93,22 @@ contained in the `NOTICE` file.
 
 -------------------------------------------------------------------------------
 
-## 2. Setting Up a New Project
+## 2. Usage
 
-## 2.1. Instructions
+### 2.1. Setting Up a New Project
 
 1. ___Prerequisites___.
 
-   * Install the [Cookiecutter][cookiecutter] Python package.
+   * Install [Git][git].
 
    * Install [Poetry](https://python-poetry.org/) 1.2 (or greater).
 
      * __Note__. The project template uses `poetry` instead of `pip` for
        management of Python package dependencies.
+
+   * Install the [Cookiecutter][cookiecutter] Python package.
+
+   * ___Optional___. Install [direnv][direnv].
 
 2. Use `cookiecutter` to create a new Python project.
 
@@ -101,13 +118,13 @@ contained in the `NOTICE` file.
 
 3. Finish setting up the new Python project.
 
-   * ___Optional___. Set up the project to use `direnv` to manage the
+   * ___Optional___. Set up the project to use direnv to manage the
      environment (for both Python and the shell).
 
      * Copy `extras/dot-envrc` to the project root directory and rename it to
        `.envrc`.
 
-     * Grant permission to `direnv` to execute the `.envrc` file.
+     * Grant permission to direnv to execute the `.envrc` file.
 
        ```shell
        $ direnv allow
@@ -132,7 +149,7 @@ contained in the `NOTICE` file.
 
 4. Configure Git.
 
-   * Install git hook scripts.
+   * Install the git pre-commit hooks.
 
      ```shell
      $ pre-commit install
@@ -148,6 +165,13 @@ contained in the `NOTICE` file.
 
      where `GIT_REMOTE` is the URL to the remote Git repository.
 
+   * Push the `main` branch to the remote Git repository.
+
+     ```shell
+     $ git checkout main
+     $ git push -u origin main
+     ```
+
 5. Update the project documentation.
 
    * Customize the `README.md` file to reflect the specifics of the project.
@@ -157,6 +181,69 @@ contained in the `NOTICE` file.
      located in the `NOTICE` file. Otherwise, the copyright notice is located
      in the `LICENSE` file.
 
+6. ___Optional___. Customize GitHub Configurations
+
+   __Code Stability__
+
+   1. From the GitHub repository web page, navigate to "Settings" > "Branches"
+      (in the "Code and automation" section of the side menu).
+
+   2. Set the default branch to `main`.
+
+   3. Add branch protection for the `main` branch and enable the following
+      configurations.
+
+      * Require a pull request before merging
+
+        * Require approvals
+
+          * __Recommendation__: enable for projects with multiple active
+            developers who can serve as reviewers
+
+          * __Warning__: must be disabled for projects with a single developer
+
+      * Require conversation resolution before merging
+
+      * Do not allow bypassing the above settings
+
+   __GitHub Actions Security__
+
+   1. From the GitHub repository web page, navigate to "Settings" > "Actions" >
+      "General" (in the "Code and automation" section of the side menu).
+
+   2. Configure "Actions permissions".
+
+      * Select the most restrictive option and customize the sub-options.
+
+        * Allow actions created by GitHub: yes
+
+        * Allow actions by Marketplace verified creators: no
+
+        * Allow specified actions and reusable workflows.
+
+          ```
+          snok/install-poetry,codecov/*,JamesIves/github-pages-deploy-action
+          ```
+
+   3. Configure "Workflow permissions".
+
+      * Select "Read repository content permissions"
+
+      * Allow GitHub Actions to create and approve pull requests: no
+
+### 2.2. Deploying Package Documentation to GitHub Pages
+
+1. From the GitHub repository web page, navigate to "Settings" > "Pages" (in
+   the "Code and automation" section of the side menu) and configure GitHub
+   Pages to deploy from the `gh-pages` branch.
+
+   * Source: Deploy from a branch
+   * Branch: gh-pages
+     * Folder: /(root)
+
+2. That's it! Every time the `main` branch is updated, the CI workflow will
+   automatically update the package documentation on GitHub Pages.
+
 -------------------------------------------------------------------------------
 
 ## 3. Contributor Notes
@@ -165,13 +252,13 @@ contained in the `NOTICE` file.
 
 #### Base Requirements
 
-* Git
+* [Git][git]
 * Python (>=3.7)
 * [Poetry][poetry]
 
 #### Optional Packages
 
-* `direnv`
+* [direnv][direnv]
 
 #### Python Packages
 
@@ -179,13 +266,13 @@ See `[tool.poetry.dependencies]` section of [`pyproject.toml`](pyproject.toml).
 
 ### 3.2. Setting Up to Develop the Cookiecutter
 
-1. ___Optional___. Set up the cookiecutter project to use `direnv` to manage
+1. ___Optional___. Set up the cookiecutter project to use direnv to manage
   the environment (for both Python and the shell).
 
     * Copy `extras/dot-envrc` to the Git repository's root directory, and
       rename it to `.envrc`.
 
-    * Grant permission to `direnv` to execute the `.envrc` file.
+    * Grant permission to direnv to execute the `.envrc` file.
 
       ```shell
       $ direnv allow
@@ -206,8 +293,8 @@ See `[tool.poetry.dependencies]` section of [`pyproject.toml`](pyproject.toml).
 To update the Python dependencies for the template (contained in the
 `{{cookiecutter.project_directory}}` directory), use the following procedure
 to ensure that package dependencies for developing the non-template components
-of the cookiecutter (e.g., `cookiecutter.json`) do not interfere with package
-dependencies for the template.
+of the cookiecutter (e.g., `hooks/post_gen_project.py`) do not interfere with
+package dependencies for the template.
 
 * Create a local clone of the cookiecutter Git repository to use for
   cookiecutter development.
@@ -222,14 +309,14 @@ dependencies for the template.
 * In the pristine project, perform the following steps to update the template's
   package dependencies.
 
-  * Set up a virtual environment for developing the template (e.g., a `direnv`
+  * Set up a virtual environment for developing the template (e.g., a direnv
     environment).
 
-  * Edit `pyproject.toml` to (1) make changes to the package dependency list
-    and (2) update the package dependency versions.
+  * Use `poetry` or manually edit `pyproject.toml` to (1) make changes to the
+    package dependency list and (2) update the package dependency versions.
 
-  * Use `poetry` to update the implicit package dependencies and versions
-    recorded in the `poetry.lock` file.
+  * Use `poetry` to update the package dependencies and versions recorded in
+    the `poetry.lock` file.
 
 * Update `{{cookiecutter.project_directory}}/pyproject.toml`.
 
@@ -273,8 +360,9 @@ dependencies for the template.
 [#1.1]: #11-repository-contents
 [#1.2]: #12-license
 
-[#2]: #2-setting-up-a-new-project
-[#2.1]: #21-instructions
+[#2]: #2-usage
+[#2.1]: #21-setting-up-a-new-project
+[#2.2]: #22-deploying-package-documentation-to-github-pages
 
 [#3]: #3-contributor-notes
 [#3.1]: #31-software-requirements
@@ -285,14 +373,34 @@ dependencies for the template.
 
 [-----------------------------REPOSITORY LINKS-----------------------------]: #
 
-[poetry-quick-reference]: {{cookiecutter.project_directory}}/docs/references/Quick-References/Poetry-Quick-Reference.md
+[poetry-quick-reference]: docs/Poetry-Quick-Reference.md
 
 [vlxi-cookiecutter-python]: https://github.com/velexi-corporation/VLXI-Cookiecutter-Python
 
 [-----------------------------EXTERNAL LINKS-----------------------------]: #
 
+[black]: https://black.readthedocs.io/
+
 [cookiecutter]: https://cookiecutter.readthedocs.io/en/latest/
+
+[coverage]: https://coverage.readthedocs.io/
+
+[direnv]: https://direnv.net/
+
+[flake8]: https://flake8.pycqa.org/
+
+[git]: https://git-scm.com/
 
 [pdoc]: https://pdoc.dev/
 
 [poetry]: https://python-poetry.org/
+
+[pre-commit]: https://pre-commit.com/
+
+[pytest]: https://docs.pytest.org/
+
+[python-packaging]: https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata
+
+[radon]: https://radon.readthedocs.io/
+
+[tox]: https://tox.wiki/
