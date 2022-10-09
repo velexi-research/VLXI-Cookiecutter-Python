@@ -97,7 +97,7 @@ contained in the `NOTICE` file.
 
 ### 2.1. Setting Up a New Project
 
-1. ___Prerequisites___.
+1. ___Prerequisites___
 
    * Install [Git][git].
 
@@ -108,7 +108,7 @@ contained in the `NOTICE` file.
 
    * Install the [Cookiecutter][cookiecutter] Python package.
 
-   * ___Optional___. Install [direnv][direnv].
+   * _Optional_. Install [direnv][direnv].
 
 2. Use `cookiecutter` to create a new Python project.
 
@@ -118,7 +118,7 @@ contained in the `NOTICE` file.
 
 3. Finish setting up the new Python project.
 
-   * ___Optional___. Set up the project to use direnv to manage the
+   * _Optional_. Set up the project to use direnv to manage the
      environment (for both Python and the shell).
 
      * Copy `extras/dot-envrc` to the project root directory and rename it to
@@ -181,7 +181,7 @@ contained in the `NOTICE` file.
      located in the `NOTICE` file. Otherwise, the copyright notice is located
      in the `LICENSE` file.
 
-6. ___Optional___. Customize GitHub Configurations
+6. _Optional_. Customize GitHub Configurations
 
    __Code Stability__
 
@@ -268,7 +268,7 @@ See `[tool.poetry.dependencies]` section of [`pyproject.toml`](pyproject.toml).
 
 ### 3.2. Setting Up to Develop the Cookiecutter
 
-1. ___Optional___. Set up the cookiecutter project to use direnv to manage
+1. _Optional_. Set up the cookiecutter project to use direnv to manage
   the environment (for both Python and the shell).
 
     * Copy `extras/dot-envrc` to the Git repository's root directory, and
