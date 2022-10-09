@@ -149,6 +149,13 @@ contained in the `NOTICE` file.
      * Commit the updated `pyproject.toml` and `poetry.lock` files to the
        project Git repository.
 
+   * Verify the copyright year and owner in the copyright notice. If the
+     project is licensed under Apache License 2.0, the copyright notice is
+     located in the `NOTICE` file. Otherwise, the copyright notice is located
+     in the `LICENSE` file.
+
+   * Customize the `README.md` file to reflect the specifics of the project.
+
 4. Configure Git.
 
    * Install the git pre-commit hooks.
@@ -174,16 +181,7 @@ contained in the `NOTICE` file.
      $ git push -u origin main
      ```
 
-5. Update the project documentation.
-
-   * Customize the `README.md` file to reflect the specifics of the project.
-
-   * Verify the copyright year and owner in the copyright notice. If the
-     project is licensed under Apache License 2.0, the copyright notice is
-     located in the `NOTICE` file. Otherwise, the copyright notice is located
-     in the `LICENSE` file.
-
-6. _Optional_. Customize GitHub Configurations
+5. _Optional_. Customize GitHub Configurations
 
    __Code Stability__
 
