@@ -183,9 +183,7 @@ code (i.e., coverage analysis).
 
 [-----------------------------REPOSITORY LINKS-----------------------------]: #
 
-[automated-testing]: {{cookiecutter.project_directory}}/docs/references/Automated-Testing.md
-
-[poetry-quick-reference]: {{cookiecutter.project_directory}}/docs/references/Poetry-Quick-Reference.md
+[poetry-quick-reference]: docs/references/Poetry-Quick-Reference.md
 
 [vlxi-cookiecutter-python]: https://github.com/velexi-corporation/VLXI-Cookiecutter-Python
 
