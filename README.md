@@ -101,7 +101,7 @@ contained in the `NOTICE` file.
 
    * Install [Git][git].
 
-   * Install [Python][python] 3.7 (or greater).
+   * Install [Python][python] 3.7.2 (or greater).
 
    * Install [Poetry][poetry] 1.2 (or greater).
 
@@ -118,45 +118,54 @@ contained in the `NOTICE` file.
    $ cookiecutter https://github.com/velexi-corporation/VLXI-Cookiecutter-Python.git
    ```
 
-3. Finish setting up the new Python project.
+3. Set up a dedicated virtual environment for the project. Any of the common
+   virtual environment options (e.g., `venv`, `direnv`, `conda`) should work.
+   Below are instructions for setting up a `direnv` or `poetry` environment.
 
-   * _Optional_. Set up the project to use direnv to manage the development
-     environment (for both Python and the shell).
+   __Note__: to avoid conflicts between virtual environments, only one method
+   should be used to manage the virtual environment.
 
-     * Copy `extras/dot-envrc` to the project root directory and rename it to
+   * __`direnv` Environment__. __Note__: `direnv` manages the environment for
+     both the Python and shell.
+
+     * ___Prerequisite___. Install `direnv`.
+
+     * Copy `extras/dot-envrc` to the project root directory, and rename it to
        `.envrc`.
 
-     * Grant permission to direnv to execute the `.envrc` file.
+       ```shell
+       $ cd $PROJECT_ROOT_DIR
+       $ cp extras/dot-envrc .envrc
+       ```
+
+     * Grant permission to direnv to execute the .envrc file.
 
        ```shell
        $ direnv allow
        ```
 
-   * Configure the Python package dependencies for the project.
+   * __`poetry` Environment__. __Note__: `poetry` only manages the Python
+     environment (it does not manage the shell environment).
 
-     * Install the base Python package dependencies, and update them to the
-       latest available versions.
+     * Create a `poetry` environment that uses a specific Python executable.
+       For instance, if `python3` is on your `PATH`, the following command
+       creates (or activates if it already exists) a Python virtual environment
+       that uses `python3`.
 
        ```shell
-       $ poetry install
-       $ poetry update
+       $ poetry env use python3
        ```
 
-     * Review the Python package dependencies for the project, and modify them
-       as needed using the `poetry` CLI tool. For a quick reference of `poetry`
-       commands, see the [Poetry Quick Reference][poetry-quick-reference].
+       For commands to use other Python executables for the virtual environment,
+       see the [Poetry Quick Reference][poetry-quick-reference].
 
-     * Commit the updated `pyproject.toml` and `poetry.lock` files to the
-       project Git repository.
+4. Install the base Python package dependencies.
 
-   * Verify the copyright year and owner in the copyright notice. If the
-     project is licensed under Apache License 2.0, the copyright notice is
-     located in the `NOTICE` file. Otherwise, the copyright notice is located
-     in the `LICENSE` file.
+   ```shell
+   $ poetry install
+   ```
 
-   * Customize the `README.md` file to reflect the specifics of the project.
-
-4. Configure Git.
+5. Configure Git.
 
    * Install the git pre-commit hooks.
 
@@ -181,7 +190,26 @@ contained in the `NOTICE` file.
      $ git push -u origin main
      ```
 
-5. _Optional_. Customize GitHub Configurations
+6. Finish setting up the new Python project.
+
+   * Verify the copyright year and owner in the copyright notice. If the
+     project is licensed under Apache License 2.0, the copyright notice is
+     located in the `NOTICE` file. Otherwise, the copyright notice is located
+     in the `LICENSE` file.
+
+   * Update the base Python package dependencies to the latest available
+     versions.
+
+     ```shell
+     $ poetry install
+     $ poetry update
+     ```
+
+   * Customize the `README.md` file to reflect the specifics of the project.
+
+   * Commit all updates to the project Git repository.
+
+7. _Optional_. Customize GitHub Configurations
 
    __Code Stability__
 
@@ -258,7 +286,7 @@ contained in the `NOTICE` file.
 #### Base Requirements
 
 * [Git][git]
-* Python (>=3.7)
+* [Python][python] (>=3.7.2)
 * [Poetry][poetry]
 
 #### Optional Packages
@@ -271,25 +299,22 @@ See `[tool.poetry.dependencies]` section of [`pyproject.toml`](pyproject.toml).
 
 ### 3.2. Setting Up to Develop the Cookiecutter
 
-1. _Optional_. Set up the cookiecutter project to use direnv to manage
-  the development environment (for both Python and the shell).
-
-    * Copy `extras/dot-envrc` to the Git repository's root directory, and
-      rename it to `.envrc`.
-
-    * Grant permission to direnv to execute the `.envrc` file.
-
-      ```shell
-      $ direnv allow
-      ```
+1. Set up a dedicated virtual environment for cookiecutter development.
+   See Step 3 from [Section 2.1][#2.1] for instructions on how to set up
+   `direnv` and `poetry` environments.
 
 2. Install the Python packages required for development.
 
    ```shell
    $ poetry install
+
+3. Install the git pre-commit hooks.
+
+   ```shell
+   $ pre-commit install
    ```
 
-3. Make the cookiecutter better!
+4. Make the cookiecutter better!
 
 ### 3.3. Additional Notes
 
