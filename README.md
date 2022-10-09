@@ -101,6 +101,8 @@ contained in the `NOTICE` file.
 
    * Install [Git][git].
 
+   * Install [Python][python] 3.8 (or greater).
+
    * Install [Poetry][poetry] 1.2 (or greater).
 
      __Note__. The project template uses `poetry` instead of `pip` for
@@ -258,7 +260,7 @@ contained in the `NOTICE` file.
 #### Base Requirements
 
 * [Git][git]
-* Python (>=3.7)
+* Python (>=3.8)
 * [Poetry][poetry]
 
 #### Optional Packages
@@ -403,6 +405,8 @@ package dependencies for the template.
 [pre-commit]: https://pre-commit.com/
 
 [pytest]: https://docs.pytest.org/
+
+[python]: https://www.python.org/
 
 [python-packaging]: https://packaging.python.org/en/latest/specifications/declaring-project-metadata/#declaring-project-metadata
 

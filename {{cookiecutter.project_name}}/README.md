@@ -83,7 +83,7 @@ __Note__: this project uses `poetry` to manage Python package dependencies.
 
 * ___Prerequisites___
 
-  * Install Python 3.7 (or greater). __Recommendation__: use `pyenv`
+  * Install [Python][python] 3.7 (or greater). __Recommendation__: use `pyenv`
     to configure the project to use a specific version of Python.
 
   * Install [Poetry][poetry] 1.2 (or greater).
@@ -195,5 +195,7 @@ code (i.e., coverage analysis).
 [cookiecutter]: https://cookiecutter.readthedocs.io/en/latest/
 
 [direnv]: https://direnv.net/
+
+[python]: https://www.python.org/
 
 [poetry]: https://python-poetry.org/
