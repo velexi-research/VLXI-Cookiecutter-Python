@@ -83,6 +83,8 @@ __Note__: this project uses `poetry` to manage Python package dependencies.
 
 * ___Prerequisites___
 
+  * Install [Git][git].
+
   * Install [Python][python] 3.7.2 (or greater). __Recommendation__: use `pyenv`
     to configure the project to use a specific version of Python.
 
@@ -193,6 +195,8 @@ code (i.e., coverage analysis).
 [cookiecutter]: https://cookiecutter.readthedocs.io/en/latest/
 
 [direnv]: https://direnv.net/
+
+[git]: https://git-scm.com/
 
 [python]: https://www.python.org/
 
