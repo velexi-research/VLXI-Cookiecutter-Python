@@ -63,7 +63,7 @@ to streamline the process of setting up a Python project that
 
 * Python package and dependency management using [Poetry][poetry]
 
-* Directory-based shell and Python environment isolation with [direnv][direnv]
+* Directory-based development environment isolation with [direnv][direnv]
 
 ### 1.1. Repository Contents
 
@@ -118,7 +118,7 @@ contained in the `NOTICE` file.
 
 3. Finish setting up the new Python project.
 
-   * _Optional_. Set up the project to use direnv to manage the
+   * _Optional_. Set up the project to use direnv to manage the development
      environment (for both Python and the shell).
 
      * Copy `extras/dot-envrc` to the project root directory and rename it to
@@ -272,7 +272,7 @@ See `[tool.poetry.dependencies]` section of [`pyproject.toml`](pyproject.toml).
 ### 3.2. Setting Up to Develop the Cookiecutter
 
 1. _Optional_. Set up the cookiecutter project to use direnv to manage
-  the environment (for both Python and the shell).
+  the development environment (for both Python and the shell).
 
     * Copy `extras/dot-envrc` to the Git repository's root directory, and
       rename it to `.envrc`.
