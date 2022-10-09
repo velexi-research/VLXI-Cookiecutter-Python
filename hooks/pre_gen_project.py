@@ -11,5 +11,5 @@ package_name = "{{ cookiecutter.package_name }}"
 
 if not re.match(PACKAGE_NAME_REGEX, package_name):
     print()
-    print(f"ERROR: \"{package_name}\" is not a valid Python package name")
+    print(f'ERROR: "{package_name}" is not a valid Python package name')
     sys.exit(1)
