@@ -88,6 +88,8 @@ __Note__: this project uses `poetry` to manage Python package dependencies.
 
   * Install [Poetry](https://python-poetry.org/) 1.2 (or greater).
 
+   * ___Optional___. Install [direnv][direnv].
+
 * Set up a dedicated virtual environment for the project. Any of the common
   virtual environment options (e.g., `venv`, `direnv`, `conda`) should work.
   Below are instructions for setting up a `direnv` or `poetry` environment.
@@ -190,5 +192,7 @@ code (i.e., coverage analysis).
 [-----------------------------EXTERNAL LINKS-----------------------------]: #
 
 [cookiecutter]: https://cookiecutter.readthedocs.io/en/latest/
+
+[direnv]: https://direnv.net/
 
 [poetry]: https://python-poetry.org/
