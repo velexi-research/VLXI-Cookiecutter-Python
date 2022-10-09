@@ -1,7 +1,7 @@
 {
   "project_name": "Project Name",
-  "project_directory": "{{cookiecutter.project_name.lower().replace(' ', '-')}}",
-  "package_name": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}",
+  "project_directory": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "package_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "author": "Your Name",
   "email": "{{ cookiecutter.author.lower().replace(' ', '.') }}@example.com",
   "license": [
