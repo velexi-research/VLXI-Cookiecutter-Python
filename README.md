@@ -101,7 +101,7 @@ contained in the `NOTICE` file.
 
    * Install [Git][git].
 
-   * Install [Python][python] 3.8 (or greater).
+   * Install [Python][python] 3.7 (or greater).
 
    * Install [Poetry][poetry] 1.2 (or greater).
 
@@ -260,7 +260,7 @@ contained in the `NOTICE` file.
 #### Base Requirements
 
 * [Git][git]
-* Python (>=3.8)
+* Python (>=3.7)
 * [Poetry][poetry]
 
 #### Optional Packages

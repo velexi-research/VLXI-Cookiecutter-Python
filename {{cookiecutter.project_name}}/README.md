@@ -83,7 +83,7 @@ __Note__: this project uses `poetry` to manage Python package dependencies.
 
 * ___Prerequisites___
 
-  * Install [Python][python] 3.7 (or greater). __Recommendation__: use `pyenv`
+  * Install [Python][python] 3.7.2 (or greater). __Recommendation__: use `pyenv`
     to configure the project to use a specific version of Python.
 
   * Install [Poetry][poetry] 1.2 (or greater).
