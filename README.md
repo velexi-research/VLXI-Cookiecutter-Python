@@ -211,7 +211,7 @@ contained in the `NOTICE` file.
    * Commit all updated files (e.g., `poetry.lock`) to the project Git
      repository.
 
-7. _Optional_. Customize GitHub Configurations
+7. ___Recommended___. Customize GitHub Configurations
 
    __Code Stability__
 
@@ -273,11 +273,11 @@ contained in the `NOTICE` file.
    * Branch: gh-pages
      * Folder: /(root)
 
-2. That's it! Every time the `main` branch is updated, the CI workflow will
-   automatically update the package documentation on GitHub Pages.
+2. In the "About" section of the project GitHub repository, set "Website" to
+   the URL for the project GitHub Pages.
 
-3. _Optional_. In the "About" section of the project GitHub repository, set
-   "Website" to the URL for the project GitHub Pages.
+3. That's it! Every time the `main` branch is updated, the CI workflow will
+   automatically update the package documentation on GitHub Pages.
 
 -------------------------------------------------------------------------------
 
