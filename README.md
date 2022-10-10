@@ -235,7 +235,26 @@ contained in the `NOTICE` file.
    * Commit all updated files (e.g., `poetry.lock`) to the project Git
      repository.
 
-7. ___Recommended___. Customize GitHub Configurations
+7. Add GitHub keys required for GitHub Actions workflows.
+
+   __Codecov Token__
+
+   These steps are needed only if the CI workflow includes uploading of
+   coverage statistics to Codecov (i.e., `ci_include_codecov` set to `yes`
+   when creating the project).
+
+   1. Log into [Codecov][codecov] and enable the project GitHub repository on
+      Codecov.
+
+   2. Get the Codecov token for the repository by navigating to "Settings"
+      from the project Codecov repo page.
+
+   3. From the project GitHub repository, navigate to "Settings" > "Secrets"
+      (in the "Security" section of the side menu).
+
+   4. Add a repository secret named `CODECOV_TOKEN`.
+
+8. ___Recommended___. Customize GitHub Configurations
 
    __Code Stability__
 
