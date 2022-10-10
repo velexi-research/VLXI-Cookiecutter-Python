@@ -42,7 +42,6 @@ A description of the package.
 ├── poetry.lock        <- Poetry lockfile
 ├── setup.py           <- `setup.py` script to support legacy tools that don't
 │                         support pyproject.toml
-├── setup.cfg          <- TODO
 ├── bin/               <- scripts and programs (e.g., CLI tools)
 ├── docs/              <- documentation and references
 ├── extras/            <- additional files that may be useful for package
