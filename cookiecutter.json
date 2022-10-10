@@ -13,5 +13,9 @@
   "enable_github_pages": [
     "yes",
     "no"
+  ],
+  "ci_include_codecov": [
+    "yes",
+    "no"
   ]
 }
