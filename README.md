@@ -201,7 +201,6 @@ contained in the `NOTICE` file.
      versions.
 
      ```shell
-     $ poetry install
      $ poetry update
      ```
 
