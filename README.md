@@ -206,7 +206,7 @@ contained in the `NOTICE` file.
 
    * Customize the `README.md` file to reflect the specifics of the project.
 
-   * Commit all updated files (e.g. `poetry.lock`) to the project Git
+   * Commit all updated files (e.g., `poetry.lock`) to the project Git
      repository.
 
 7. _Optional_. Customize GitHub Configurations
