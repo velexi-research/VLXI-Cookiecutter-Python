@@ -7,7 +7,7 @@ readme = "README.md"
 authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}> and contributors"]
 
 [tool.poetry.dependencies]
-python = "^3.7.2"
+python = "{{ cookiecutter.python_version }}"
 
 [tool.poetry.group.code-quality.dependencies]
 black = "^22.10.0"
