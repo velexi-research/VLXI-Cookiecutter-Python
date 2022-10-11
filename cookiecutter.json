@@ -1,17 +1,20 @@
 {
-  "project_name": "Project Name",
-  "project_directory": "{{cookiecutter.project_name.lower().replace(' ', '-')}}",
-  "package_name": "{{cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_')}}",
+  "project_name": "project-name",
+  "package_name": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "author": "Your Name",
   "email": "{{ cookiecutter.author.lower().replace(' ', '.') }}@example.com",
   "license": [
     "Apache License 2.0",
     "BSD-3-Clause License",
     "MIT License",
-    "Empty license file"
+    "None"
   ],
-  "python_version_requirements": "^3.8",
+  "python_version": "^3.7.2",
   "enable_github_pages": [
+    "yes",
+    "no"
+  ],
+  "ci_include_codecov": [
     "yes",
     "no"
   ]

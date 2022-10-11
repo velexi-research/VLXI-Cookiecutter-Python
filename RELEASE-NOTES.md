@@ -2,9 +2,24 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.4.0 (2022-10-10)
+==================
+### Cookiecutter Template Enhancements
+* Simplify user-specified cookiecutter parameters.
+* Add pre-generation hook to validate package name.
+* Improve consistency of Jinja template variable expressions.
+* Fix bugs.
+
+### Cookiecutter Development Enhancements
+* Migrate cookiecutter hooks to shell scripts.
+* Remove unneeded package dependencies for cookiecutter development.
+* Simplify pre-commit hooks.
+* Update documentation.
+
+-------------------------------------------------------------------------------
 0.3.0 (2022-10-08)
 ==================
-## Cookiecutter Template Enhancements
+### Cookiecutter Template Enhancements
 * Restructure project to be a cookiecutter instead of a GitHub template
   repository.
 * Migrate to pyproject.toml for specifying project metadata and tool
@@ -16,7 +31,7 @@ Velexi Python Package Cookiecutter Release Notes
 * Update all files to pass all pre-commit checks.
 * Improve application of Apache License 2.0.
 
-## Cookiecutter Development Enhancements
+### Cookiecutter Development Enhancements
 * Add integrations with tools for supporting code quality: black and git
   pre-commit hooks.
 * Update all files to pass all pre-commit checks.

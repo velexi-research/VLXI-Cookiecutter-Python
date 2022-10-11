@@ -42,7 +42,6 @@ A description of the package.
 ├── poetry.lock        <- Poetry lockfile
 ├── setup.py           <- `setup.py` script to support legacy tools that don't
 │                         support pyproject.toml
-├── setup.cfg          <- TODO
 ├── bin/               <- scripts and programs (e.g., CLI tools)
 ├── docs/              <- documentation and references
 ├── extras/            <- additional files that may be useful for package
@@ -83,14 +82,19 @@ __Note__: this project uses `poetry` to manage Python package dependencies.
 
 * ___Prerequisites___
 
-  * Install Python 3.7 (or greater). __Recommendation__: use `pyenv`
+  * Install [Git][git].
+
+  * Install [Python][python] 3.7.2 (or greater). __Recommendation__: use `pyenv`
     to configure the project to use a specific version of Python.
 
-  * Install [Poetry](https://python-poetry.org/) 1.2 (or greater).
+  * Install [Poetry][poetry] 1.2 (or greater).
+
+   * _Optional_. Install [direnv][direnv].
 
 * Set up a dedicated virtual environment for the project. Any of the common
   virtual environment options (e.g., `venv`, `direnv`, `conda`) should work.
   Below are instructions for setting up a `direnv` or `poetry` environment.
+
   __Note__: to avoid conflicts between virtual environments, only one method
   should be used to manage the virtual environment.
 
@@ -115,8 +119,6 @@ __Note__: this project uses `poetry` to manage Python package dependencies.
 
   * __`poetry` Environment__. __Note__: `poetry` only manages the Python
     environment (it does not manage the shell environment).
-
-    * ___Prerequisite___. Install [Poetry](https://python-poetry.org/).
 
     * Create a `poetry` environment that uses a specific Python executable.
       For instance, if `python3` is on your `PATH`, the following command
@@ -183,14 +185,18 @@ code (i.e., coverage analysis).
 
 [-----------------------------REPOSITORY LINKS-----------------------------]: #
 
-[automated-testing]: {{cookiecutter.project_directory}}/docs/references/Automated-Testing.md
-
-[poetry-quick-reference]: {{cookiecutter.project_directory}}/docs/references/Poetry-Quick-Reference.md
+[poetry-quick-reference]: docs/references/Poetry-Quick-Reference.md
 
 [vlxi-cookiecutter-python]: https://github.com/velexi-corporation/VLXI-Cookiecutter-Python
 
 [-----------------------------EXTERNAL LINKS-----------------------------]: #
 
 [cookiecutter]: https://cookiecutter.readthedocs.io/en/latest/
+
+[direnv]: https://direnv.net/
+
+[git]: https://git-scm.com/
+
+[python]: https://www.python.org/
 
 [poetry]: https://python-poetry.org/

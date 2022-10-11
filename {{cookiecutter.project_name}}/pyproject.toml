@@ -1,13 +1,13 @@
 [tool.poetry]
-name = "{{cookiecutter.project_name.replace(' ', '-')}}"
+name = "{{ cookiecutter.package_name }}"
 version = "0.1.0"
 description = ""
 license = "{% if cookiecutter.license == 'Apache License 2.0' %}Apache-2.0{% elif cookiecutter.license == 'BSD-3-Clause License' %}BSD-3-Clause{% elif cookiecutter.license == 'MIT License' %}MIT{% endif %}"
 readme = "README.md"
-authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
+authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}> and contributors"]
 
 [tool.poetry.dependencies]
-python = "^3.7.2"
+python = "{{ cookiecutter.python_version }}"
 
 [tool.poetry.group.code-quality.dependencies]
 black = "^22.10.0"
