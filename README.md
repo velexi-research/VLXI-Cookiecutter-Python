@@ -174,7 +174,7 @@ contained in the `NOTICE` file.
      * Create a `poetry` environment that uses a specific Python executable.
        For instance, if `python3` is on your `PATH`, the following command
        creates (or activates if it already exists) a Python virtual environment
-       that uses `python3`.
+       for the project that uses `python3`.
 
        ```shell
        $ poetry env use python3
@@ -207,7 +207,7 @@ contained in the `NOTICE` file.
        $ git remote add origin GIT_REMOTE
        ```
 
-       where `GIT_REMOTE` is the URL to the remote Git repository.
+       where `GIT_REMOTE` is the URL of the remote Git repository.
 
      * Push the `main` branch to the remote Git repository.
 
@@ -235,7 +235,7 @@ contained in the `NOTICE` file.
    * Commit all updated files (e.g., `poetry.lock`) to the project Git
      repository.
 
-7. Add GitHub keys required for GitHub Actions workflows.
+7. Add GitHub keys that are required for GitHub Actions workflows.
 
    __Codecov Token__
 
@@ -254,7 +254,7 @@ contained in the `NOTICE` file.
 
    4. Add a repository secret named `CODECOV_TOKEN`.
 
-8. ___Recommended___. Customize GitHub Configurations
+8. ___Recommended___. Customize the settings for the project GitHub repository.
 
    __Code Stability__
 
@@ -302,7 +302,7 @@ contained in the `NOTICE` file.
 
    3. Configure "Workflow permissions".
 
-      * Select "Read repository content permissions"
+      * Select "Read repository content permissions".
 
       * Allow GitHub Actions to create and approve pull requests: no
 
@@ -373,6 +373,10 @@ package dependencies for the template.
 
 * Create a local clone of the cookiecutter Git repository to use for
   cookiecutter development.
+
+  ```shell
+  $ git clone git@github.com:velexi-corporation/VLXI-Cookiecutter-Python.git
+  ```
 
 * Use `cookiecutter` from the local cookiecutter Git repository to create a
   clean project for template dependency updates.
