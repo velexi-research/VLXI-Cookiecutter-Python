@@ -174,7 +174,7 @@ contained in the `NOTICE` file.
      * Create a `poetry` environment that uses a specific Python executable.
        For instance, if `python3` is on your `PATH`, the following command
        creates (or activates if it already exists) a Python virtual environment
-       for the project that uses `python3`.
+       that uses `python3` for the project.
 
        ```shell
        $ poetry env use python3
