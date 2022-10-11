@@ -1,1 +1,0 @@
-../{{cookiecutter.project_directory}}/docs/references/pdoc-Quick-Reference.md
