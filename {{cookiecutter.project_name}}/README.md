@@ -8,9 +8,9 @@ Table of Contents
 
 1. [Overview][#1]
 
-    1.1. [Package Contents][#1.1]
+   1.1. [Package Contents][#1.1]
 
-    1.2. [License][#1.2]
+   1.2. [License][#1.2]
 
 2. [Usage][#2]
 
@@ -18,11 +18,11 @@ Table of Contents
 
 4. [Contributor Notes][#4]
 
-    4.1. [Setting Up a Development Environment][#4.1]
+   4.1. [Setting Up a Development Environment][#4.1]
 
-    4.2. [Running Automated Tests][#4.2]
+   4.2. [Running Automated Tests][#4.2]
 
-    4.3. [Cleaning the Development Directory][#4.3]
+   4.3. [Cleaning the Development Directory][#4.3]
 
 -------------------------------------------------------------------------------
 
