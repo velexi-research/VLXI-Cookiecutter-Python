@@ -78,6 +78,9 @@ Table of Contents
   "[Dependency sepcification][poetry-dependency-specification]" section
   of the Poetry documentation for version specifier semantics.
 
+* `github_repo_owner`: owner of the GitHub repository for the project. To
+  disable GitHub integration, set `github_repo_owner` to an empty string.
+
 * `enable_github_pages`: flag indicating whether GitHub Pages should be enabled
   for the project
 
