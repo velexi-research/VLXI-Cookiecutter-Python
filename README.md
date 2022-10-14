@@ -445,7 +445,7 @@ package dependencies for the template.
 
 [---------------------------- REPOSITORY LINKS ----------------------------]: #
 
-[poetry-quick-reference]: {{cookiecutter.project_name}}/docs/references/Poetry-Quick-Reference.md
+[poetry-quick-reference]: {{cookiecutter.project_name}}/extras/references/Poetry-Quick-Reference.md
 
 [vlxi-cookiecutter-python]: https://github.com/velexi-corporation/VLXI-Cookiecutter-Python
 
