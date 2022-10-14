@@ -118,7 +118,7 @@ Table of Contents
    should be used to manage the virtual environment.
 
    * __`direnv` Environment__. __Note__: `direnv` manages the environment for
-     both the Python and shell.
+     both Python and the shell.
 
      * ___Prerequisite___. Install `direnv`.
 
