@@ -1,6 +1,6 @@
 {{ cookiecutter.project_name }}
 ===============================================================================
-{% if cookiecutter.github_repo_owner.strip() != "" %}
+
 [----------------------------- BADGES: BEGIN -----------------------------]: #
 
 <table>{% if cookiecutter.enable_github_pages == "yes" %}
@@ -30,7 +30,7 @@
 </table>
 
 [------------------------------ BADGES: END ------------------------------]: #
-{% endif %}
+
 -------------------------------------------------------------------------------
 
 An brief description of the package.
