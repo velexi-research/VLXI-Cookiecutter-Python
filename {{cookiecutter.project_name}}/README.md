@@ -1,5 +1,43 @@
 {{ cookiecutter.project_name }}
 ===============================================================================
+{% if cookiecutter.github_repo_owner.strip() != "" %}
+[----------------------------- BADGES: BEGIN -----------------------------]: #
+
+<table>{% if cookiecutter.enable_github_pages == "yes" %}
+  <tr>
+    <td>Documentation</td>
+    <td>
+      <a href="https://{{ cookiecutter.github_repo_owner }}.github.io/{{ cookiecutter.project_name }}/dev/"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/docs-dev-blue.svg"/></a>
+      <a href="https://{{ cookiecutter.github_repo_owner }}.github.io/{{ cookiecutter.project_name }}/stable/"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/docs-stable-blue.svg"/></a>
+    </td>
+  </tr>
+  {% endif %}
+  <tr>
+    <td>Build Status</td>
+    <td>
+      <a href="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.project_name }}/actions/workflows/CI.yml"><img style="vertical-align: bottom;" src="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.project_name }}/actions/workflows/CI.yml/badge.svg"/></a>{% if cookiecutter.ci_include_codecov == "yes" %}
+      <a href="https://codecov.io/gh/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.project_name }}">
+        <img style="vertical-align: bottom;" src="https://codecov.io/gh/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.project_name }}/branch/main/graph/badge.svg"/></a>{% endif %}
+    </td>
+  </tr>
+
+  <!-- Miscellaneous Badges -->
+  <tr>
+    <td colspan=2 align="center">
+      <a href="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.project_name }}/issues"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"/></a>
+    </td>
+  </tr>
+</table>
+
+[------------------------------ BADGES: END ------------------------------]: #
+{% endif %}
+-------------------------------------------------------------------------------
+
+An brief description of the package.
+
+The {{ cookiecutter.project_name }} features:
+
+* a list of the core features of the project.
 
 -------------------------------------------------------------------------------
 
@@ -8,63 +46,33 @@ Table of Contents
 
 1. [Overview][#1]
 
-   1.1. [Package Contents][#1.1]
-
-   1.2. [License][#1.2]
-
-2. [Usage][#2]
+2. [Getting Started][#2]
 
 3. [Known Issues][#3]
 
 4. [Contributor Notes][#4]
 
-   4.1. [Setting Up a Development Environment][#4.1]
+   4.1. [License][#4.1]
 
-   4.2. [Running Automated Tests][#4.2]
+   4.2. [Package Contents][#4.2]
 
-   4.3. [Cleaning the Development Directory][#4.3]
+   4.3. [Setting Up a Development Environment][#4.3]
+
+   4.4. [Running Automated Tests][#4.4]
+
+   4.5. [Cleaning the Development Directory][#4.5]
 
 -------------------------------------------------------------------------------
 
 ## 1. Overview
 
-A description of the package.
+A more detailed description of the package.
 
-### 1.1. Package Contents
-
-```
-├── README.md          <- this file
-├── RELEASE-NOTES.md   <- package release notes
-├── LICENSE            <- package license
-├{% if cookiecutter.license == 'Apache License 2.0' %}── NOTICE             <- package copyright notice
-├{% endif %}── Makefile           <- Makefile containing useful shortcuts (`make` rules).
-├── pyproject.toml     <- Python project metadata file
-├── poetry.lock        <- Poetry lockfile
-├── setup.py           <- `setup.py` script to support legacy tools that don't
-│                         support pyproject.toml
-├── bin/               <- scripts and programs (e.g., CLI tools)
-├── docs/              <- documentation and references
-├── extras/            <- additional files that may be useful for package
-│                         development
-├── spikes/            <- experimental code snippets, etc.
-├── src/               <- package source code
-└── tests/             <- package test code
-```
-
-### 1.2. License
-{% if cookiecutter.license == 'Apache License 2.0' %}
-The contents of this package are covered under the Apache License 2.0 (included
-in the `LICENSE` file). The copyright for this package is contained in the
-`NOTICE` file.
-{% else %}
-The contents of this package are covered under the license contained in the
-`LICENSE` file.
-{% endif %}
 -------------------------------------------------------------------------------
 
-## 2. Usage
+## 2. Getting Started
 
-Usage instructions for the package.
+Instructions for installing and using the package.
 
 -------------------------------------------------------------------------------
 
@@ -76,63 +84,105 @@ Known issues for the package.
 
 ## 4. Contributor Notes
 
-### 4.1. Setting Up a Development Environment
+### 4.1. License
+{% if cookiecutter.license == "Apache License 2.0" %}
+The contents of this package are covered under the Apache License 2.0 (included
+in the `LICENSE` file). The copyright for this package is contained in the
+`NOTICE` file.
+{% else %}
+The contents of this package are covered under the license contained in the
+`LICENSE` file.
+{% endif %}
+### 4.2. Package Contents
+
+```
+├── README.md          <- this file
+├── RELEASE-NOTES.md   <- package release notes
+├── LICENSE            <- package license
+├{% if cookiecutter.license == "Apache License 2.0" %}── NOTICE             <- package copyright notice
+├{% endif %}── Makefile           <- Makefile containing useful shortcuts (`make` rules).
+├── pyproject.toml     <- Python project metadata file
+├── poetry.lock        <- Poetry lockfile
+├── setup.py           <- `setup.py` script to support legacy tools that don't
+│                         support pyproject.toml
+├── bin/               <- scripts and programs (e.g., CLI tools)
+├── docs/              <- package documentation
+├── extras/            <- additional files and references that may be useful
+│                         for package development
+├── spikes/            <- experimental code snippets, etc.
+├── src/               <- package source code
+└── tests/             <- package test code
+```
+
+### 4.3. Setting Up a Development Environment
 
 __Note__: this project uses `poetry` to manage Python package dependencies.
 
-* ___Prerequisites___
+1. ___Prerequisites___
 
-  * Install [Git][git].
+   * Install [Git][git].
 
-  * Install [Python][python] 3.7.2 (or greater). __Recommendation__: use `pyenv`
-    to configure the project to use a specific version of Python.
+   * Install [Python][python] 3.8 (or greater). __Recommendation__: use `pyenv`
+     to configure the project to use a specific version of Python.
 
-  * Install [Poetry][poetry] 1.2 (or greater).
+   * Install [Poetry][poetry] 1.2 (or greater).
 
    * _Optional_. Install [direnv][direnv].
 
-* Set up a dedicated virtual environment for the project. Any of the common
-  virtual environment options (e.g., `venv`, `direnv`, `conda`) should work.
-  Below are instructions for setting up a `direnv` or `poetry` environment.
+2. Set up a dedicated virtual environment for the project. Any of the common
+   virtual environment options (e.g., `venv`, `direnv`, `conda`) should work.
+   Below are instructions for setting up a `direnv` or `poetry` environment.
 
-  __Note__: to avoid conflicts between virtual environments, only one method
-  should be used to manage the virtual environment.
+   __Note__: to avoid conflicts between virtual environments, only one method
+   should be used to manage the virtual environment.
 
-  * __`direnv` Environment__. __Note__: `direnv` manages the environment for
-    both the Python and shell.
+   * __`direnv` Environment__. __Note__: `direnv` manages the environment for
+     both Python and the shell.
 
-    * ___Prerequisite___. Install `direnv`.
+     * ___Prerequisite___. Install `direnv`.
 
-    * Copy `extras/dot-envrc` to the project root directory, and rename it to
-      `.envrc`.
+     * Copy `extras/dot-envrc` to the project root directory, and rename it to
+       `.envrc`.
 
-      ```shell
-      $ cd $PROJECT_ROOT_DIR
-      $ cp extras/dot-envrc .envrc
-      ```
+       ```shell
+       $ cd $PROJECT_ROOT_DIR
+       $ cp extras/dot-envrc .envrc
+       ```
 
-    * Grant permission to direnv to execute the .envrc file.
+     * Grant permission to direnv to execute the .envrc file.
 
-      ```shell
-      $ direnv allow
-      ```
+       ```shell
+       $ direnv allow
+       ```
 
-  * __`poetry` Environment__. __Note__: `poetry` only manages the Python
-    environment (it does not manage the shell environment).
+   * __`poetry` Environment__. __Note__: `poetry` only manages the Python
+     environment (it does not manage the shell environment).
 
-    * Create a `poetry` environment that uses a specific Python executable.
-      For instance, if `python3` is on your `PATH`, the following command
-      creates (or activates if it already exists) a Python virtual environment
-      that uses `python3`.
+     * Create a `poetry` environment that uses a specific Python executable.
+       For instance, if `python3` is on your `PATH`, the following command
+       creates (or activates if it already exists) a Python virtual environment
+       that uses `python3`.
 
-      ```shell
-      $ poetry env use python3
-      ```
+       ```shell
+       $ poetry env use python3
+       ```
 
-      For commands to use other Python executables for the virtual environment,
-      see the [Poetry Quick Reference][poetry-quick-reference].
+       For commands to use other Python executables for the virtual environment,
+       see the [Poetry Quick Reference][poetry-quick-reference].
 
-### 4.2. Running Automated Tests
+3. Install the Python package dependencies.
+
+   ```shell
+   $ poetry install
+   ```
+
+4. Install the git pre-commit hooks.
+
+   ```shell
+   $ pre-commit install
+   ```
+
+### 4.4. Running Automated Tests
 
 This project is configured to support (1) automated testing of code located in
 the `src` directory and (2) analysis of how well the tests cover of the source
@@ -157,7 +207,7 @@ code (i.e., coverage analysis).
   $ make full-test
   ```
 
-### 4.3. Cleaning the Development Directory
+### 4.5. Cleaning the Development Directory
 
 * Use `make clean` to automatically remove temporary files and directories
   generated during testing (e.g., temporary directories, coverage files).
@@ -168,30 +218,26 @@ code (i.e., coverage analysis).
 
 -------------------------------------------------------------------------------
 
-[-----------------------------INTERNAL LINKS-----------------------------]: #
+[----------------------------- INTERNAL LINKS -----------------------------]: #
 
 [#1]: #1-overview
-[#1.1]: #11-package-contents
-[#1.2]: #12-license
 
-[#2]: #2-usage
+[#2]: #2-getting-started
 
 [#3]: #3-known-issues
 
 [#4]: #4-contributor-notes
-[#4.1]: #41-setting-up-a-development-environment
-[#4.2]: #42-running-automated-tests
-[#4.3]: #43-cleaning-the-development-directory
+[#4.1]: #41-license
+[#4.2]: #42-package-contents
+[#4.3]: #43-setting-up-a-development-environment
+[#4.4]: #44-running-automated-tests
+[#4.5]: #45-cleaning-the-development-directory
 
-[-----------------------------REPOSITORY LINKS-----------------------------]: #
+[---------------------------- REPOSITORY LINKS ----------------------------]: #
 
-[poetry-quick-reference]: docs/references/Poetry-Quick-Reference.md
+[poetry-quick-reference]: extras/references/Poetry-Quick-Reference.md
 
-[vlxi-cookiecutter-python]: https://github.com/velexi-corporation/VLXI-Cookiecutter-Python
-
-[-----------------------------EXTERNAL LINKS-----------------------------]: #
-
-[cookiecutter]: https://cookiecutter.readthedocs.io/en/latest/
+[----------------------------- EXTERNAL LINKS -----------------------------]: #
 
 [direnv]: https://direnv.net/
 
