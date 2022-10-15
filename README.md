@@ -1,42 +1,6 @@
 Velexi Python Package Cookiecutter
 ==================================
 
-__Authors__  
-Kevin T. Chu `<kevin@velexi.com>`
-
--------------------------------------------------------------------------------
-
-Table of Contents
------------------
-
-1. [Overview][#1]
-
-   1.1. [Repository Contents][#1.1]
-
-   1.2 [Cookiecutter Parameters][#1.2]
-
-   1.3. [License][#1.3]
-
-2. [Usage][#2]
-
-   2.1 [Setting Up a New Project][#2.1]
-
-   2.2 [Publishing Package Documentation to GitHub Pages][#2.2]
-
-3. [Contributor Notes][#3]
-
-   3.1. [Software Requirements][#3.1]
-
-   3.2. [Setting Up to Develop the Cookiecutter][#3.2]
-
-   3.3. [Additional Notes][#3.3]
-
-4. [Documentation][#4]
-
--------------------------------------------------------------------------------
-
-## 1. Overview
-
 The [Velexi Python Project Cookiecutter][vlxi-cookiecutter-python] is intended
 to streamline the process of setting up a Python project that
 
@@ -67,27 +31,38 @@ to streamline the process of setting up a Python project that
 
 * Directory-based development environment isolation with [direnv][direnv]
 
-### 1.1. Repository Contents
+-------------------------------------------------------------------------------
 
-```
-├── README.md               <- this file
-├── RELEASE-NOTES.md        <- cookiecutter release notes
-├── LICENSE                 <- cookiecutter license
-├── NOTICE                  <- cookiecutter copyright notice
-├── cookiecutter.json       <- cookiecutter configuration file
-├── pyproject.toml          <- Python project metadata file for cookiecutter
-│                              development
-├── poetry.lock             <- Poetry lockfile
-├── docs/                   <- cookiecutter documentation
-├── extras/                 <- additional files that may be useful for
-│                              cookiecutter development
-├── hooks/                  <- cookiecutter scripts that run before and/or
-│                              after project generation
-├── spikes/                 <- experimental code
-└── {{cookiecutter.name}}/  <- cookiecutter template
-```
+Table of Contents
+-----------------
 
-### 1.2. Cookiecutter Parameters
+1. [Usage][#1]
+
+   1.1 [Cookiecutter Parameters][#1.1]
+
+   1.2 [Setting Up a New Project][#1.2]
+
+   1.3 [Publishing Package Documentation to GitHub Pages][#1.3]
+
+2. [Contributor Notes][#2]
+
+   2.1. [License][#2.1]
+
+   2.2. [Repository Contents][#2.2]
+
+   2.3. [Software Requirements][#2.3]
+
+   2.4. [Setting Up to Develop the Cookiecutter][#2.4]
+
+   2.5. [Additional Notes][#2.5]
+
+3. [Documentation][#3]
+
+-------------------------------------------------------------------------------
+
+## 1. Usage
+
+### 1.1. Cookiecutter Parameters
 
 * `project_name`: project name
 
@@ -103,23 +78,15 @@ to streamline the process of setting up a Python project that
   "[Dependency sepcification][poetry-dependency-specification]" section
   of the Poetry documentation for version specifier semantics.
 
+* `github_repo_owner`: owner of the GitHub repository for the project
+
 * `enable_github_pages`: flag indicating whether GitHub Pages should be enabled
   for the project
 
 * `ci_include_codecov`: flag indicating whether the CI workflow should upload
   coverage statistics to [Codecov][codecov]
 
-### 1.3. License
-
-The contents of this cookiecutter are covered under the Apache License 2.0
-(included in the `LICENSE` file). The copyright for this cookiecutter is
-contained in the `NOTICE` file.
-
--------------------------------------------------------------------------------
-
-## 2. Usage
-
-### 2.1. Setting Up a New Project
+### 1.2. Setting Up a New Project
 
 1. ___Prerequisites___
 
@@ -150,7 +117,7 @@ contained in the `NOTICE` file.
    should be used to manage the virtual environment.
 
    * __`direnv` Environment__. __Note__: `direnv` manages the environment for
-     both the Python and shell.
+     both Python and the shell.
 
      * ___Prerequisite___. Install `direnv`.
 
@@ -306,7 +273,7 @@ contained in the `NOTICE` file.
 
       * Allow GitHub Actions to create and approve pull requests: no
 
-### 2.2. Publishing Package Documentation to GitHub Pages
+### 1.3. Publishing Package Documentation to GitHub Pages
 
 1. From the project GitHub repository, navigate to "Settings" > "Pages" (in
    the "Code and automation" section of the side menu) and configure GitHub
@@ -324,9 +291,35 @@ contained in the `NOTICE` file.
 
 -------------------------------------------------------------------------------
 
-## 3. Contributor Notes
+## 2. Contributor Notes
 
-### 3.1. Software Requirements
+### 2.1. License
+
+The contents of this cookiecutter are covered under the Apache License 2.0
+(included in the `LICENSE` file). The copyright for this cookiecutter is
+contained in the `NOTICE` file.
+
+### 2.2. Repository Contents
+
+```
+├── README.md               <- this file
+├── RELEASE-NOTES.md        <- cookiecutter release notes
+├── LICENSE                 <- cookiecutter license
+├── NOTICE                  <- cookiecutter copyright notice
+├── cookiecutter.json       <- cookiecutter configuration file
+├── pyproject.toml          <- Python project metadata file for cookiecutter
+│                              development
+├── poetry.lock             <- Poetry lockfile
+├── docs/                   <- cookiecutter documentation
+├── extras/                 <- additional files that may be useful for
+│                              cookiecutter development
+├── hooks/                  <- cookiecutter scripts that run before and/or
+│                              after project generation
+├── spikes/                 <- experimental code
+└── {{cookiecutter.name}}/  <- cookiecutter template
+```
+
+### 2.3. Software Requirements
 
 #### Base Requirements
 
@@ -342,7 +335,7 @@ contained in the `NOTICE` file.
 
 See `[tool.poetry.dependencies]` section of [`pyproject.toml`](pyproject.toml).
 
-### 3.2. Setting Up to Develop the Cookiecutter
+### 2.4. Setting Up to Develop the Cookiecutter
 
 1. Set up a dedicated virtual environment for cookiecutter development.
    See Step 3 from [Section 2.1][#2.1] for instructions on how to set up
@@ -361,7 +354,7 @@ See `[tool.poetry.dependencies]` section of [`pyproject.toml`](pyproject.toml).
 
 4. Make the cookiecutter better!
 
-### 3.3. Additional Notes
+### 2.5. Additional Notes
 
 #### Updating Cookiecutter Template Dependencies
 
@@ -427,37 +420,35 @@ package dependencies for the template.
 
 -------------------------------------------------------------------------------
 
-## 4. Documentation
+## 3. Documentation
 
 * [Poetry Quick Reference][poetry-quick-reference]
 
 -------------------------------------------------------------------------------
 
-[-----------------------------INTERNAL LINKS-----------------------------]: #
+[----------------------------- INTERNAL LINKS -----------------------------]: #
 
-[#1]: #1-overview
-[#1.1]: #11-repository-contents
-[#1.2]: #12-cookiecutter-parameters
-[#1.3]: #13-license
+[#1]: #1-usage
+[#1.1]: #11-cookiecutter-parameters
+[#1.2]: #12-setting-up-a-new-project
+[#1.3]: #13-publishing-package-documentation-to-github-pages
 
-[#2]: #2-usage
-[#2.1]: #21-setting-up-a-new-project
-[#2.2]: #22-publishing-package-documentation-to-github-pages
+[#2]: #2-contributor-notes
+[#2.1]: #21-license
+[#2.2]: #22-repository-contents
+[#2.3]: #23-software-requirements
+[#2.4]: #24-setting-up-to-develop-the-cookiecutter
+[#2.5]: #25-additional-notes
 
-[#3]: #3-contributor-notes
-[#3.1]: #31-software-requirements
-[#3.2]: #32-setting-up-to-develop-the-cookiecutter
-[#3.3]: #33-additional-notes
+[#3]: #3-documentation
 
-[#4]: #4-documentation
+[---------------------------- REPOSITORY LINKS ----------------------------]: #
 
-[-----------------------------REPOSITORY LINKS-----------------------------]: #
-
-[poetry-quick-reference]: {{cookiecutter.project_name}}/docs/references/Poetry-Quick-Reference.md
+[poetry-quick-reference]: {{cookiecutter.project_name}}/extras/references/Poetry-Quick-Reference.md
 
 [vlxi-cookiecutter-python]: https://github.com/velexi-corporation/VLXI-Cookiecutter-Python
 
-[-----------------------------EXTERNAL LINKS-----------------------------]: #
+[----------------------------- EXTERNAL LINKS -----------------------------]: #
 
 [black]: https://black.readthedocs.io/
 

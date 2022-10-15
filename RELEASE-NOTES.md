@@ -2,6 +2,20 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.4.1 (2022-10-14)
+==================
+### Cookiecutter Template Enhancements
+* Add `github_repo_owner` parameter to cookiecutter.json.
+* Move software references to `extras` directory to separate them from project
+  documentation.
+* Update README template. Add status badges to README.
+
+### Cookiecutter Development Enhancements
+* Simplify logic for default values in cookiecutter.json.
+* Update documentation.
+* Update poetry.lock.
+
+-------------------------------------------------------------------------------
 0.4.0 (2022-10-10)
 ==================
 ### Cookiecutter Template Enhancements

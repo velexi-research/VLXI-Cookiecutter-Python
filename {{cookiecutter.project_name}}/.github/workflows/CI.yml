@@ -26,13 +26,11 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
         arch: [x64, x86]
-        python-version: ["3.7", "3.8", "3.9", "3.10"]
+        python-version: ["3.8", "3.9", "3.10"]
 
         exclude:
           - os: macOS-latest
             arch: x86
-          - os: windows-latest
-            python-version: "3.7"
           - os: windows-latest
             python-version: "3.8"
 
