@@ -183,6 +183,14 @@ Table of Contents
        $ git push -u origin main
        ```
 
+     * If GitHub Pages are enabled for the project, push the `gh-pages` branch
+       to the remote Git repository.
+
+       ```shell
+       $ git checkout gh-pages
+       $ git push -u origin gh-pages
+       ```
+
 6. Finish setting up the new Python project.
 
    * Verify the copyright year and owner in the copyright notice. If the
