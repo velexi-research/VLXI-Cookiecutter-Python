@@ -183,6 +183,14 @@ Table of Contents
        $ git push -u origin main
        ```
 
+     * If GitHub Pages are enabled for the project, push the `gh-pages` branch
+       to the remote Git repository.
+
+       ```shell
+       $ git checkout gh-pages
+       $ git push -u origin gh-pages
+       ```
+
 6. Finish setting up the new Python project.
 
    * Verify the copyright year and owner in the copyright notice. If the
@@ -406,7 +414,7 @@ package dependencies for the template.
     description = ""
     license = "{% if cookiecutter.license == 'Apache License 2.0' %}Apache-2.0{% elif cookiecutter.license == 'BSD-3-Clause License' %}BSD-3-Clause{% elif cookiecutter.license == 'MIT License' %}MIT{% endif %}"
     readme = "README.md"
-    authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}> and contributors"]
+    authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
     ```
     <!-- {% endraw %} -->
 

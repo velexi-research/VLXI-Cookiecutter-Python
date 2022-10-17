@@ -2,6 +2,12 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.4.2 (2022-10-17)
+==================
+* Fix bug in authors field of pyproject.toml files.
+* Update documentation.
+
+-------------------------------------------------------------------------------
 0.4.1 (2022-10-14)
 ==================
 ### Cookiecutter Template Enhancements
