@@ -25,14 +25,14 @@ jobs:
 
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
-        arch: [x64, x86]
+        arch: [x64{% if cookiecutter.ci_include_x86 == "yes" %}, x86{% endif %}]
         python-version: ["3.8", "3.9", "3.10"]
 
         exclude:
-          - os: macOS-latest
-            arch: x86
           - os: windows-latest
-            python-version: "3.8"
+            python-version: "3.8"{% if cookiecutter.ci_include_x86 == "yes" %}
+          - os: macOS-latest
+            arch: x86{% endif %}
 
     defaults:
       run:
