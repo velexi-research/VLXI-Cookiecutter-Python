@@ -2,6 +2,12 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.4.3 (2022-10-22)
+==================
+* Improve pytest configuration.
+* Change default value of "ci_include_x86" parameter to "no".
+
+-------------------------------------------------------------------------------
 0.4.2 (2022-10-17)
 ==================
 * Fix bug in authors field of pyproject.toml files.
