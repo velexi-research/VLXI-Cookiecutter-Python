@@ -18,5 +18,9 @@
   "ci_include_codecov": [
     "yes",
     "no"
+  ],
+  "ci_include_x86": [
+    "no",
+    "yes"
   ]
 }
