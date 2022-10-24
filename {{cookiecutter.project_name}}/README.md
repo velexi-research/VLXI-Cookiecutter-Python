@@ -33,7 +33,7 @@
 
 -------------------------------------------------------------------------------
 
-An brief description of the package.
+A brief description of the package.
 
 The {{ cookiecutter.project_name }} features:
 
