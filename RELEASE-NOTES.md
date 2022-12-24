@@ -2,14 +2,25 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.4.4 (2022-12-24)
+==================
+### Cookiecutter Template
+* Change default project name in `pyproject.toml` to use dashes instead of
+  underscores.
+* Update package dependencies to address security vulnerabilities.
+* Update README template.
+
+-------------------------------------------------------------------------------
 0.4.3 (2022-10-22)
 ==================
+### Cookiecutter Template
 * Improve pytest configuration.
 * Change default value of "ci_include_x86" parameter to "no".
 
 -------------------------------------------------------------------------------
 0.4.2 (2022-10-17)
 ==================
+### Cookiecutter Template
 * Fix bug in authors field of pyproject.toml files.
 * Update documentation.
 
