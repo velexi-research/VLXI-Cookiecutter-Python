@@ -116,30 +116,33 @@ The contents of this package are covered under the license contained in the
 
 ### 4.3. Setting Up a Development Environment
 
-__Note__: this project uses `poetry` to manage Python package dependencies.
+<strong><em>Note</em></strong>: this project uses `poetry` to manage Python
+package dependencies.
 
-1. ___Prerequisites___
+1. Prerequisites
 
    * Install [Git][git].
 
-   * Install [Python][python] 3.8 (or greater). __Recommendation__: use `pyenv`
-     to configure the project to use a specific version of Python.
+   * Install [Python][python] 3.8 (or greater).
+     <strong><em>Recommendation</em></strong>: use `pyenv` to configure the
+     project to use a specific version of Python.
 
    * Install [Poetry][poetry] 1.2 (or greater).
 
-   * _Optional_. Install [direnv][direnv].
+   * <em>Optional</em>. Install [direnv][direnv].
 
 2. Set up a dedicated virtual environment for the project. Any of the common
    virtual environment options (e.g., `venv`, `direnv`, `conda`) should work.
    Below are instructions for setting up a `direnv` or `poetry` environment.
 
-   __Note__: to avoid conflicts between virtual environments, only one method
-   should be used to manage the virtual environment.
+   <strong><em>Note</em></strong>: to avoid conflicts between virtual
+   environments, only one method should be used to manage the virtual
+   environment.
 
-   * __`direnv` Environment__. __Note__: `direnv` manages the environment for
-     both Python and the shell.
+   * <strong>`direnv` Environment</strong>. <em>Note</em>: `direnv` manages the
+     environment for both Python and the shell.
 
-     * ___Prerequisite___. Install `direnv`.
+     * Prerequisite. Install `direnv`.
 
      * Copy `extras/dot-envrc` to the project root directory, and rename it to
        `.envrc`.
@@ -155,8 +158,8 @@ __Note__: this project uses `poetry` to manage Python package dependencies.
        $ direnv allow
        ```
 
-   * __`poetry` Environment__. __Note__: `poetry` only manages the Python
-     environment (it does not manage the shell environment).
+   * <strong>`poetry` Environment</strong>. <em>Note</em>: `poetry` only
+     manages the Python environment (it does not manage the shell environment).
 
      * Create a `poetry` environment that uses a specific Python executable.
        For instance, if `python3` is on your `PATH`, the following command
