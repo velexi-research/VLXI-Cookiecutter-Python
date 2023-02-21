@@ -78,7 +78,7 @@ radon-raw:
 
 ## Generate API documentation in HTML format
 docs:
-	pdoc -o ${DOCS_DIR} --math ${PKG_DIR}
+	pdoc ${PKG_DIR} -o ${DOCS_DIR} --math
 
 # --- Utility rules
 
