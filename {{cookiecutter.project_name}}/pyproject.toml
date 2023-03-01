@@ -9,14 +9,23 @@ authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
 [tool.poetry.dependencies]
 python = "{{ cookiecutter.python_version }}"
 
+[tool.poetry.group.code-quality]
+optional = true
+
 [tool.poetry.group.code-quality.dependencies]
 black = "^22.10.0"
 flake8 = "<5.0.0"  # Unpin after compatibility with pytest-flake8 is fixed
 pre-commit = "^2.20.0"
 radon = "^5.1.0"
 
+[tool.poetry.group.docs]
+optional = true
+
 [tool.poetry.group.docs.dependencies]
 pdoc = "^12.2.0"
+
+[tool.poetry.group.test]
+optional = true
 
 [tool.poetry.group.test.dependencies]
 coverage = "^6.5.0"
