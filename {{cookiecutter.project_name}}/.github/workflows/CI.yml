@@ -82,7 +82,7 @@ jobs:
 
       - name: Install package dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install
+        run: poetry install --with test,docs
 
       # --- Run tests
 
