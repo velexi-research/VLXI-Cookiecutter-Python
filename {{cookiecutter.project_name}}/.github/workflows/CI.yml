@@ -82,7 +82,7 @@ jobs:
 
       - name: Install package dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --with test,docs
+        run: poetry install --with test
 
       # --- Run tests
 
@@ -149,7 +149,7 @@ jobs:
 
       - name: Install package dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --without test
+        run: poetry install --with docs
 
       # --- Build and deploy documentation
 
