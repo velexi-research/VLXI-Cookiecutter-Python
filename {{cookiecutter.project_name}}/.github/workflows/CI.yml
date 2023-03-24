@@ -112,6 +112,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      python-version: "3.10"
+
     steps:
       # --- Check out code and setup Python
 
@@ -121,7 +124,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
+          python-version: {% raw %}${{ env.python-version }}{% endraw %}
 
       # --- Install Poetry
 
@@ -129,7 +132,7 @@ jobs:
         uses: actions/cache@v2.1.6
         with:
           path: ~/.local
-          key: {% raw %}dotlocal-${{ runner.os }}-${{ runner.arch }}-${{ matrix.python-version }}-${{ hashFiles('.github/workflows/CI.yml') }}{% endraw %}
+          key: {% raw %}dotlocal-${{ runner.os }}-${{ runner.arch }}-${{ env.python-version }}-${{ hashFiles('.github/workflows/CI.yml') }}{% endraw %}
 
       - name: Install Python poetry
         uses: snok/install-poetry@v1
@@ -145,7 +148,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .venv
-          key: {% raw %}venv-docs-${{ runner.os }}-${{ runner.arch }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}{% endraw %}
+          key: {% raw %}venv-docs-${{ runner.os }}-${{ runner.arch }}-${{ env.python-version }}-${{ hashFiles('**/poetry.lock') }}{% endraw %}
 
       - name: Install package dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
