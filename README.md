@@ -86,7 +86,7 @@ Table of Contents
 
 ### 1.2. Setting Up a New Project
 
-1. ___Prerequisites___
+1. Prerequisites
 
    * Install [Git][git].
 
@@ -94,7 +94,7 @@ Table of Contents
 
    * Install [Poetry][poetry] 1.2 (or greater).
 
-     __Note__. The project template uses `poetry` instead of `pip` for
+     ___Note___. The project template uses `poetry` instead of `pip` for
      management of Python package dependencies.
 
    * Install the [Cookiecutter][cookiecutter] Python package.
@@ -111,13 +111,13 @@ Table of Contents
    virtual environment options (e.g., `venv`, `direnv`, `conda`) should work.
    Below are instructions for setting up a `direnv` or `poetry` environment.
 
-   __Note__: to avoid conflicts between virtual environments, only one method
+   ___Note___: to avoid conflicts between virtual environments, only one method
    should be used to manage the virtual environment.
 
-   * __`direnv` Environment__. __Note__: `direnv` manages the environment for
+   * __`direnv` Environment__. _Note_: `direnv` manages the environment for
      both Python and the shell.
 
-     * ___Prerequisite___. Install `direnv`.
+     * Prerequisite. Install `direnv`.
 
      * Copy `extras/dot-envrc` to the project root directory, and rename it to
        `.envrc`.
@@ -133,7 +133,7 @@ Table of Contents
        $ direnv allow
        ```
 
-   * __`poetry` Environment__. __Note__: `poetry` only manages the Python
+   * __`poetry` Environment__. _Note_: `poetry` only manages the Python
      environment (it does not manage the shell environment).
 
      * Create a `poetry` environment that uses a specific Python executable.
@@ -243,10 +243,10 @@ Table of Contents
 
         * Require approvals
 
-          * __Recommendation__: enable for projects with multiple active
+          * ___Recommendation___: enable for projects with multiple active
             developers who can serve as reviewers
 
-          * __Warning__: must be disabled for projects with a single developer
+          * ___Warning___: must be disabled for projects with a single developer
 
       * Require conversation resolution before merging
 
