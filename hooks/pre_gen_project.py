@@ -16,6 +16,7 @@
 """
 Cookiecutter pre-generation script
 """
+
 import re
 import sys
 
