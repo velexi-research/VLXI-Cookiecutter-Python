@@ -8,8 +8,8 @@ SRC_DIR=src
 CODE_DIRS=${SRC_DIR} tests
 
 # Package directories
-PKG_DIR=src/{{ cookiecutter.package_name }}
-DOCS_DIR=docs/{{ cookiecutter.package_name }}
+PKG_DIR=src/{{ cookiecutter.__package_name }}
+DOCS_DIR=docs/{{ cookiecutter.__package_name }}
 
 # Testing parameters
 NPROCS=auto

@@ -164,4 +164,4 @@ jobs:
         if: github.ref_name == 'main' && !startsWith(github.ref, 'refs/pull/')
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: docs/{{cookiecutter.package_name}}
+          folder: docs/{{cookiecutter.__package_name}}
