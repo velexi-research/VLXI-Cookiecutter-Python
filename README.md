@@ -90,7 +90,7 @@ Table of Contents
 
    * Install [Git][git].
 
-   * Install [Python][python] 3.7.2 (or greater).
+   * Install [Python][python] 3.9 (or greater).
 
    * Install [Poetry][poetry] 1.2 (or greater).
 
@@ -330,7 +330,7 @@ contained in the `NOTICE` file.
 #### Base Requirements
 
 * [Git][git]
-* [Python][python] (>=3.7.2)
+* [Python][python] (>=3.9)
 * [Poetry][poetry]
 
 #### Optional Packages
