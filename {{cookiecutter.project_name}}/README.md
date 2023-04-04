@@ -100,7 +100,7 @@ The contents of this package are covered under the license contained in the
 ├── RELEASE-NOTES.md   <- package release notes
 ├── LICENSE            <- package license
 ├{% if cookiecutter.license == "Apache License 2.0" %}── NOTICE             <- package copyright notice
-├{% endif %}── Makefile           <- Makefile containing useful shortcuts (`make` rules).
+├{% endif %}── Makefile           <- Makefile containing useful shortcuts (`make` rules)
 ├── pyproject.toml     <- Python project metadata file
 ├── poetry.lock        <- Poetry lockfile
 ├── setup.py           <- `setup.py` script to support legacy tools that don't
