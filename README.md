@@ -196,6 +196,8 @@ Table of Contents
      located in the `NOTICE` file. Otherwise, the copyright notice is located
      in the `LICENSE` file.
 
+   * Fill in any empty fields in `pyproject.toml`.
+
    * Update the base Python package dependencies to the latest available
      versions.
 
