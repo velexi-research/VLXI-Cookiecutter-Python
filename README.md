@@ -181,14 +181,6 @@ Table of Contents
        $ git push -u origin main
        ```
 
-     * If GitHub Pages are enabled for the project, push the `gh-pages` branch
-       to the remote Git repository.
-
-       ```shell
-       $ git checkout gh-pages
-       $ git push -u origin gh-pages
-       ```
-
 6. Finish setting up the new Python project.
 
    * Verify the copyright year and owner in the copyright notice. If the
@@ -270,7 +262,6 @@ Table of Contents
         * Allow specified actions and reusable workflows.
 
           ```
-          JamesIves/github-pages-deploy-action@*,
           codecov/codecov-action@*,
           snok/install-poetry@*,
           ```
@@ -292,9 +283,8 @@ Table of Contents
 2. In the "About" section of the project GitHub repository, set "Website" to
    the URL for the project GitHub Pages.
 
-3. That's it! Every time the `main` branch is updated, the CI and gh-pages
-   workflows will automatically update the package documentation on GitHub
-   Pages.
+3. That's it! Every time the `main` branch is updated, the CI workflow will
+   automatically update the package documentation on GitHub Pages.
 
 -------------------------------------------------------------------------------
 
