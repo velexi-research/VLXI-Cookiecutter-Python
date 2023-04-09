@@ -10,6 +10,9 @@ on:
     branches:
       - main
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 concurrency:
   # Skip intermediate builds: always.
   # Cancel intermediate builds: only if it is a pull request build.
@@ -106,18 +109,31 @@ jobs:
           fail_ci_if_error: true
 {% endif %}
   build-docs:
-    name: Build Documentation
+    name: Build and Deploy Documentation to GitHub Pages
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     runs-on: ubuntu-latest
 
     env:
       python-version: "3.11"
 
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     steps:
       # --- Check out code and setup Python
 
       - name: Check out repository
         uses: actions/checkout@v3
+
+      - name: Set up Pages
+        uses: actions/configure-pages@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -157,9 +173,11 @@ jobs:
       - name: Build documentation
         run: poetry run make docs
 
-      - name: Deploy documentation
-        # Only run when the 'main' branch is updated
-        if: github.ref_name == 'main' && !startsWith(github.ref, 'refs/pull/')
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          folder: docs/{{cookiecutter.__project_name}}
+          path: docs/{{ cookiecutter.__project_name }}
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
