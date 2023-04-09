@@ -108,7 +108,8 @@ jobs:
           file: ./coverage.xml
           fail_ci_if_error: true
 {% endif %}
-  build-docs:
+{% if cookiecutter.enable_github_pages == "yes" %}
+  build-and-deploy-docs:
     name: Build and Deploy Documentation to GitHub Pages
 
     environment:
@@ -181,3 +182,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
+{% endif %}
