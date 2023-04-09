@@ -181,6 +181,11 @@ Table of Contents
        $ git push -u origin main
        ```
 
+       ___Note___. When GitHub Pages are enabled, the "Build and Deploy
+       Documentation" GitHub Actions job will fail until the GitHub Pages
+       settings for the GitHub repository been configured (see Section
+       [#1.3][#1.3]).
+
 6. Finish setting up the new Python project.
 
    * Verify the copyright year and owner in the copyright notice. If the
