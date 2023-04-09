@@ -33,18 +33,19 @@ jobs:
         {% if cookiecutter.ci_include_x86 == "yes" %}
         exclude:
           - os: macOS-latest
-            arch: x86{% endif %}
+            arch: x86
+        {% endif %}
 
     defaults:
       run:
         shell: bash
 
     runs-on: {% raw %}${{ matrix.os }}{% endraw %}
-{% if cookiecutter.ci_include_codecov == "yes" %}
+    {% if cookiecutter.ci_include_codecov == "yes" %}
     env:
         codecov-arch: x64
         codecov-version: "3.11"
-{% endif %}
+    {% endif %}
     steps:
 
       # --- Check out code and setup Python
@@ -91,7 +92,7 @@ jobs:
         run: |
           source $VENV
           poetry run pytest --cov-report=xml
-{% if cookiecutter.ci_include_codecov == "yes" %}
+      {% if cookiecutter.ci_include_codecov == "yes" %}
       # --- Upload coverage statistics to codecov.io
 
       - name: Upload code coverage data to codecov.io
@@ -106,8 +107,9 @@ jobs:
         with:
           token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
           file: ./coverage.xml
-          fail_ci_if_error: true{% endif %}{% if cookiecutter.enable_github_pages == "yes" %}
-
+          fail_ci_if_error: true
+      {% endif %}
+  {% if cookiecutter.enable_github_pages == "yes" %}
   build-and-deploy-docs:
     name: Build and Deploy Documentation
 
@@ -180,4 +182,5 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2{% endif %}
+        uses: actions/deploy-pages@v2
+  {% endif %}
