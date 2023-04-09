@@ -14,7 +14,7 @@ optional = true
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
-flake8 = "^6.0.0"
+flake8 = "<5.0.0"  # Unpin after compatibility with pytest-flake8 is fixed
 pre-commit = "^2.20.0"
 radon = "^5.1.0"
 
