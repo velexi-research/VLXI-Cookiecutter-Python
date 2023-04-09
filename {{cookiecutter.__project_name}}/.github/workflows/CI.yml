@@ -40,7 +40,7 @@ jobs:
 {% if cookiecutter.ci_include_codecov == "yes" %}
     env:
         codecov-arch: x64
-        codecov-version: "3.10"
+        codecov-version: "3.11"
 {% endif %}
     steps:
 
@@ -111,7 +111,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      python-version: "3.10"
+      python-version: "3.11"
 
     steps:
       # --- Check out code and setup Python
