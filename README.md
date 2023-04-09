@@ -285,17 +285,16 @@ Table of Contents
 
 1. From the project GitHub repository, navigate to "Settings" > "Pages" (in
    the "Code and automation" section of the side menu) and configure GitHub
-   Pages to deploy from the `gh-pages` branch.
+   Pages to use "GitHub Actions" as its "Source".
 
-   * Source: Deploy from a branch
-   * Branch: gh-pages
-     * Folder: /(root)
+   * Source: GitHub Actions
 
 2. In the "About" section of the project GitHub repository, set "Website" to
    the URL for the project GitHub Pages.
 
-3. That's it! Every time the `main` branch is updated, the CI workflow will
-   automatically update the package documentation on GitHub Pages.
+3. That's it! Every time the `main` branch is updated, the CI and gh-pages
+   workflows will automatically update the package documentation on GitHub
+   Pages.
 
 -------------------------------------------------------------------------------
 
@@ -409,7 +408,7 @@ package dependencies for the template.
     <!-- {% raw %} -->
     ```jinja
     [tool.poetry]
-    name = "{{ cookiecutter.__package_name }}"
+    name = "{{ cookiecutter.__project_name }}"
     version = "0.1.0"
     description = ""
     license = "{% if cookiecutter.license == 'Apache License 2.0' %}Apache-2.0{% elif cookiecutter.license == 'BSD-3-Clause License' %}BSD-3-Clause{% elif cookiecutter.license == 'MIT License' %}MIT{% endif %}"
