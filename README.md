@@ -104,7 +104,7 @@ Table of Contents
 2. Use `cookiecutter` to create a new Python project.
 
    ```shell
-   $ cookiecutter https://github.com/velexi-corporation/VLXI-Cookiecutter-Python.git
+   $ cookiecutter https://github.com/velexi-research/VLXI-Cookiecutter-Python.git
    ```
 
 3. Set up a dedicated virtual environment for the project. Any of the common
@@ -370,7 +370,7 @@ interfere with Python package dependencies for the template.
   cookiecutter development.
 
   ```shell
-  $ git clone git@github.com:velexi-corporation/VLXI-Cookiecutter-Python.git
+  $ git clone git@github.com:velexi-research/VLXI-Cookiecutter-Python.git
   ```
 
 * Use `cookiecutter` from the local cookiecutter Git repository to create an
@@ -449,7 +449,7 @@ interfere with Python package dependencies for the template.
 
 [poetry-quick-reference]: {{cookiecutter.__project_name}}/extras/references/Poetry-Quick-Reference.md
 
-[vlxi-cookiecutter-python]: https://github.com/velexi-corporation/VLXI-Cookiecutter-Python
+[vlxi-cookiecutter-python]: https://github.com/velexi-research/VLXI-Cookiecutter-Python
 
 [----------------------------- EXTERNAL LINKS -----------------------------]: #
 
