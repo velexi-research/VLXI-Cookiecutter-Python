@@ -2,6 +2,27 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.5.0 (2023-04-09)
+==================
+### Cookiecutter Template
+* Update cookiecutter parameters.
+  * "package_name" is no longer user-defined. It is now automatically set.
+* Slugify project name in places where special characters may cause problems
+  (e.g., URLs and directory names).
+* Fix logic for setting up GitHub Actions when GitHub Pages are not enabled.
+* Reorganize dependency groups in `pyproject.toml`. Make development groups
+  optional.
+* Update GitHub Actions CI workflow
+  * Migrate to GitHub Actions for deploying documentation to GitHub Pages.
+* Remove "full-test" target from Makefile.
+* Update package dependency versions.
+* Polish code and documentation.
+
+### Cookiecutter Development
+* Update package dependency versions.
+* Add Apache license incantations to cookiecutter hook scripts.
+
+-------------------------------------------------------------------------------
 0.4.4 (2022-12-24)
 ==================
 ### Cookiecutter Template
