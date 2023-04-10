@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "{{ cookiecutter.project_name | slugify }}"
+name = "{{ cookiecutter.__project_name }}"
 version = "0.1.0"
 description = ""
 license = "{% if cookiecutter.license == 'Apache License 2.0' %}Apache-2.0{% elif cookiecutter.license == 'BSD-3-Clause License' %}BSD-3-Clause{% elif cookiecutter.license == 'MIT License' %}MIT{% endif %}"
@@ -9,14 +9,23 @@ authors = ["{{ cookiecutter.author }} <{{ cookiecutter.email }}>"]
 [tool.poetry.dependencies]
 python = "{{ cookiecutter.python_version }}"
 
-[tool.poetry.group.code-quality.dependencies]
+[tool.poetry.group.dev]
+optional = true
+
+[tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
 flake8 = "<5.0.0"  # Unpin after compatibility with pytest-flake8 is fixed
 pre-commit = "^2.20.0"
 radon = "^5.1.0"
 
+[tool.poetry.group.docs]
+optional = true
+
 [tool.poetry.group.docs.dependencies]
 pdoc = "^12.2.0"
+
+[tool.poetry.group.test]
+optional = true
 
 [tool.poetry.group.test.dependencies]
 coverage = "^6.5.0"
@@ -52,7 +61,7 @@ omit = ["*/tests/*"]
 legacy_tox_ini = """
 [tox]
 isolated_build = true
-envlist = py37, py38, py39, py310
+envlist = py37, py38, py39, py310, py311
 
 [testenv]
 whitelist_externals = poetry

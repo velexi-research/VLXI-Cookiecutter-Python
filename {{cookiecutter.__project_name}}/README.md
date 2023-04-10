@@ -7,24 +7,24 @@
   <tr>
     <td>Documentation</td>
     <td>
-      <a href="https://{{ cookiecutter.github_repo_owner }}.github.io/{{ cookiecutter.project_name }}/dev/"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/docs-dev-blue.svg"/></a>
-      <a href="https://{{ cookiecutter.github_repo_owner }}.github.io/{{ cookiecutter.project_name }}/stable/"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/docs-stable-blue.svg"/></a>
+      <a href="https://{{ cookiecutter.github_repo_owner }}.github.io/{{ cookiecutter.__project_name }}/dev/"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/docs-dev-blue.svg"/></a>
+      <a href="https://{{ cookiecutter.github_repo_owner }}.github.io/{{ cookiecutter.__project_name }}/stable/"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/docs-stable-blue.svg"/></a>
     </td>
   </tr>
   {% endif %}
   <tr>
     <td>Build Status</td>
     <td>
-      <a href="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.project_name }}/actions/workflows/CI.yml"><img style="vertical-align: bottom;" src="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.project_name }}/actions/workflows/CI.yml/badge.svg"/></a>{% if cookiecutter.ci_include_codecov == "yes" %}
-      <a href="https://codecov.io/gh/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.project_name }}">
-        <img style="vertical-align: bottom;" src="https://codecov.io/gh/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.project_name }}/branch/main/graph/badge.svg"/></a>{% endif %}
+      <a href="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.__project_name }}/actions/workflows/CI.yml"><img style="vertical-align: bottom;" src="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.__project_name }}/actions/workflows/CI.yml/badge.svg"/></a>{% if cookiecutter.ci_include_codecov == "yes" %}
+      <a href="https://codecov.io/gh/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.__project_name }}">
+        <img style="vertical-align: bottom;" src="https://codecov.io/gh/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.__project_name }}/branch/main/graph/badge.svg"/></a>{% endif %}
     </td>
   </tr>
 
   <!-- Miscellaneous Badges -->
   <tr>
     <td colspan=2 align="center">
-      <a href="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.project_name }}/issues"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"/></a>
+      <a href="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.__project_name }}/issues"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"/></a>
     </td>
   </tr>
 </table>
@@ -101,6 +101,7 @@ The contents of this package are covered under the license contained in the
 ├── LICENSE            <- package license
 ├{% if cookiecutter.license == "Apache License 2.0" %}── NOTICE             <- package copyright notice
 ├{% endif %}── Makefile           <- Makefile containing useful shortcuts (`make` rules).
+│                         Use `make help` to show the list of available rules.
 ├── pyproject.toml     <- Python project metadata file
 ├── poetry.lock        <- Poetry lockfile
 ├── setup.py           <- `setup.py` script to support legacy tools that don't
@@ -116,30 +117,33 @@ The contents of this package are covered under the license contained in the
 
 ### 4.3. Setting Up a Development Environment
 
-__Note__: this project uses `poetry` to manage Python package dependencies.
+<strong><em>Note</em></strong>: this project uses `poetry` to manage Python
+package dependencies.
 
-1. ___Prerequisites___
+1. Prerequisites
 
    * Install [Git][git].
 
-   * Install [Python][python] 3.8 (or greater). __Recommendation__: use `pyenv`
-     to configure the project to use a specific version of Python.
+   * Install [Python][python] {{ cookiecutter.python_version | trim("~") | trim("^") }} (or greater).
+     <strong><em>Recommendation</em></strong>: use `pyenv` to configure the
+     project to use a specific version of Python.
 
    * Install [Poetry][poetry] 1.2 (or greater).
 
-   * _Optional_. Install [direnv][direnv].
+   * <em>Optional</em>. Install [direnv][direnv].
 
 2. Set up a dedicated virtual environment for the project. Any of the common
    virtual environment options (e.g., `venv`, `direnv`, `conda`) should work.
    Below are instructions for setting up a `direnv` or `poetry` environment.
 
-   __Note__: to avoid conflicts between virtual environments, only one method
-   should be used to manage the virtual environment.
+   <strong><em>Note</em></strong>: to avoid conflicts between virtual
+   environments, only one method should be used to manage the virtual
+   environment.
 
-   * __`direnv` Environment__. __Note__: `direnv` manages the environment for
-     both Python and the shell.
+   * <strong>`direnv` Environment</strong>. <em>Note</em>: `direnv` manages the
+     environment for both Python and the shell.
 
-     * ___Prerequisite___. Install `direnv`.
+     * Prerequisite. Install `direnv`.
 
      * Copy `extras/dot-envrc` to the project root directory, and rename it to
        `.envrc`.
@@ -155,8 +159,8 @@ __Note__: this project uses `poetry` to manage Python package dependencies.
        $ direnv allow
        ```
 
-   * __`poetry` Environment__. __Note__: `poetry` only manages the Python
-     environment (it does not manage the shell environment).
+   * <strong>`poetry` Environment</strong>. <em>Note</em>: `poetry` only
+     manages the Python environment (it does not manage the shell environment).
 
      * Create a `poetry` environment that uses a specific Python executable.
        For instance, if `python3` is on your `PATH`, the following command

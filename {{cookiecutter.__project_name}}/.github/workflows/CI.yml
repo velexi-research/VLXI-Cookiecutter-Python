@@ -10,6 +10,9 @@ on:
     branches:
       - main
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 concurrency:
   # Skip intermediate builds: always.
   # Cancel intermediate builds: only if it is a pull request build.
@@ -26,24 +29,23 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
         arch: [x64{% if cookiecutter.ci_include_x86 == "yes" %}, x86{% endif %}]
-        python-version: ["3.8", "3.9", "3.10"]
-
+        python-version: ["3.9", "3.10", "3.11"]
+        {% if cookiecutter.ci_include_x86 == "yes" %}
         exclude:
-          - os: windows-latest
-            python-version: "3.8"{% if cookiecutter.ci_include_x86 == "yes" %}
           - os: macOS-latest
-            arch: x86{% endif %}
+            arch: x86
+        {% endif %}
 
     defaults:
       run:
         shell: bash
 
     runs-on: {% raw %}${{ matrix.os }}{% endraw %}
-{% if cookiecutter.ci_include_codecov == "yes" %}
+    {% if cookiecutter.ci_include_codecov == "yes" %}
     env:
         codecov-arch: x64
-        codecov-version: "3.10"
-{% endif %}
+        codecov-version: "3.11"
+    {% endif %}
     steps:
 
       # --- Check out code and setup Python
@@ -82,7 +84,7 @@ jobs:
 
       - name: Install package dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install
+        run: poetry install --with test
 
       # --- Run tests
 
@@ -90,7 +92,7 @@ jobs:
         run: |
           source $VENV
           poetry run pytest --cov-report=xml
-{% if cookiecutter.ci_include_codecov == "yes" %}
+      {% if cookiecutter.ci_include_codecov == "yes" %}
       # --- Upload coverage statistics to codecov.io
 
       - name: Upload code coverage data to codecov.io
@@ -106,11 +108,25 @@ jobs:
           token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
           file: ./coverage.xml
           fail_ci_if_error: true
-{% endif %}
-  build-docs:
-    name: Build Documentation
+      {% endif %}
+  {% if cookiecutter.enable_github_pages == "yes" %}
+  build-and-deploy-docs:
+    name: Build and Deploy Documentation
+
+    environment:
+      name: github-pages
+      url: {% raw %}${{ steps.deployment.outputs.page_url }}{% endraw %}
 
     runs-on: ubuntu-latest
+
+    env:
+      python-version: "3.11"
+
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
 
     steps:
       # --- Check out code and setup Python
@@ -118,10 +134,13 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v3
 
+      - name: Set up Pages
+        uses: actions/configure-pages@v3
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: {% raw %}${{ matrix.python-version }}{% endraw %}
+          python-version: {% raw %}${{ env.python-version }}{% endraw %}
 
       # --- Install Poetry
 
@@ -129,7 +148,7 @@ jobs:
         uses: actions/cache@v2.1.6
         with:
           path: ~/.local
-          key: {% raw %}dotlocal-${{ runner.os }}-${{ runner.arch }}-${{ matrix.python-version }}-${{ hashFiles('.github/workflows/CI.yml') }}{% endraw %}
+          key: {% raw %}dotlocal-${{ runner.os }}-${{ runner.arch }}-${{ env.python-version }}-${{ hashFiles('.github/workflows/CI.yml') }}{% endraw %}
 
       - name: Install Python poetry
         uses: snok/install-poetry@v1
@@ -145,20 +164,23 @@ jobs:
         uses: actions/cache@v2
         with:
           path: .venv
-          key: {% raw %}venv-docs-${{ runner.os }}-${{ runner.arch }}-${{ matrix.python-version }}-${{ hashFiles('**/poetry.lock') }}{% endraw %}
+          key: {% raw %}venv-docs-${{ runner.os }}-${{ runner.arch }}-${{ env.python-version }}-${{ hashFiles('**/poetry.lock') }}{% endraw %}
 
       - name: Install package dependencies
         if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-        run: poetry install --without test
+        run: poetry install --with docs
 
       # --- Build and deploy documentation
 
       - name: Build documentation
         run: poetry run make docs
 
-      - name: Deploy documentation
-        # Only run when the 'main' branch is updated
-        if: github.ref_name == 'main' && !startsWith(github.ref, 'refs/pull/')
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          folder: docs/{{cookiecutter.package_name}}
+          path: docs/{{ cookiecutter.__project_name }}
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+  {% endif %}

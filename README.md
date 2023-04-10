@@ -66,8 +66,6 @@ Table of Contents
 
 * `project_name`: project name
 
-* `package_name`: Python package name
-
 * `author`: project's primary author
 
 * `email`: primary author's email
@@ -88,15 +86,15 @@ Table of Contents
 
 ### 1.2. Setting Up a New Project
 
-1. ___Prerequisites___
+1. Prerequisites
 
    * Install [Git][git].
 
-   * Install [Python][python] 3.7.2 (or greater).
+   * Install [Python][python] 3.9 (or greater).
 
    * Install [Poetry][poetry] 1.2 (or greater).
 
-     __Note__. The project template uses `poetry` instead of `pip` for
+     ___Note___. The project template uses `poetry` instead of `pip` for
      management of Python package dependencies.
 
    * Install the [Cookiecutter][cookiecutter] Python package.
@@ -113,13 +111,13 @@ Table of Contents
    virtual environment options (e.g., `venv`, `direnv`, `conda`) should work.
    Below are instructions for setting up a `direnv` or `poetry` environment.
 
-   __Note__: to avoid conflicts between virtual environments, only one method
+   ___Note___: to avoid conflicts between virtual environments, only one method
    should be used to manage the virtual environment.
 
-   * __`direnv` Environment__. __Note__: `direnv` manages the environment for
+   * __`direnv` Environment__. _Note_: `direnv` manages the environment for
      both Python and the shell.
 
-     * ___Prerequisite___. Install `direnv`.
+     * Prerequisite. Install `direnv`.
 
      * Copy `extras/dot-envrc` to the project root directory, and rename it to
        `.envrc`.
@@ -135,7 +133,7 @@ Table of Contents
        $ direnv allow
        ```
 
-   * __`poetry` Environment__. __Note__: `poetry` only manages the Python
+   * __`poetry` Environment__. _Note_: `poetry` only manages the Python
      environment (it does not manage the shell environment).
 
      * Create a `poetry` environment that uses a specific Python executable.
@@ -158,7 +156,7 @@ Table of Contents
 
 5. Configure Git.
 
-   * Install the git pre-commit hooks.
+   * Install the Git pre-commit hooks.
 
      ```shell
      $ pre-commit install
@@ -183,13 +181,10 @@ Table of Contents
        $ git push -u origin main
        ```
 
-     * If GitHub Pages are enabled for the project, push the `gh-pages` branch
-       to the remote Git repository.
-
-       ```shell
-       $ git checkout gh-pages
-       $ git push -u origin gh-pages
-       ```
+       ___Note___. When GitHub Pages are enabled, the "Build and Deploy
+       Documentation" GitHub Actions job will fail until the GitHub Pages
+       settings for the GitHub repository been configured (see Section
+       [#1.3][#1.3]).
 
 6. Finish setting up the new Python project.
 
@@ -204,6 +199,8 @@ Table of Contents
      ```shell
      $ poetry update
      ```
+
+   * Fill in any empty fields in `pyproject.toml`.
 
    * Customize the `README.md` file to reflect the specifics of the project.
 
@@ -245,10 +242,10 @@ Table of Contents
 
         * Require approvals
 
-          * __Recommendation__: enable for projects with multiple active
+          * ___Recommendation___: enable for projects with multiple active
             developers who can serve as reviewers
 
-          * __Warning__: must be disabled for projects with a single developer
+          * ___Warning___: must be disabled for projects with a single developer
 
       * Require conversation resolution before merging
 
@@ -270,7 +267,6 @@ Table of Contents
         * Allow specified actions and reusable workflows.
 
           ```
-          JamesIves/github-pages-deploy-action@*,
           codecov/codecov-action@*,
           snok/install-poetry@*,
           ```
@@ -285,11 +281,9 @@ Table of Contents
 
 1. From the project GitHub repository, navigate to "Settings" > "Pages" (in
    the "Code and automation" section of the side menu) and configure GitHub
-   Pages to deploy from the `gh-pages` branch.
+   Pages to use "GitHub Actions" as its "Source".
 
-   * Source: Deploy from a branch
-   * Branch: gh-pages
-     * Folder: /(root)
+   * Source: GitHub Actions
 
 2. In the "About" section of the project GitHub repository, set "Website" to
    the URL for the project GitHub Pages.
@@ -332,8 +326,8 @@ contained in the `NOTICE` file.
 #### Base Requirements
 
 * [Git][git]
-* [Python][python] (>=3.7.2)
-* [Poetry][poetry]
+* [Python][python] (>=3.9)
+* [Poetry][poetry] (>=1.2)
 
 #### Optional Packages
 
@@ -354,7 +348,7 @@ See `[tool.poetry.dependencies]` section of [`pyproject.toml`](pyproject.toml).
    ```shell
    $ poetry install
 
-3. Install the git pre-commit hooks.
+3. Install the Git pre-commit hooks.
 
    ```shell
    $ pre-commit install
@@ -364,13 +358,13 @@ See `[tool.poetry.dependencies]` section of [`pyproject.toml`](pyproject.toml).
 
 ### 2.5. Additional Notes
 
-#### Updating Cookiecutter Template Dependencies
+#### Updating Template Dependencies
 
 To update the Python dependencies for the template (contained in the
-`{{cookiecutter.project_name}}` directory), use the following procedure to
-ensure that package dependencies for developing the non-template components
-of the cookiecutter (e.g., `hooks/pre_gen_project.py`) do not interfere with
-package dependencies for the template.
+`{{cookiecutter.__project_name}}` directory), use the following procedure to
+ensure that Python package dependencies for developing the non-template
+components of the cookiecutter (e.g., `hooks/pre_gen_project.py`) do not
+interfere with Python package dependencies for the template.
 
 * Create a local clone of the cookiecutter Git repository to use for
   cookiecutter development.
@@ -379,29 +373,30 @@ package dependencies for the template.
   $ git clone git@github.com:velexi-corporation/VLXI-Cookiecutter-Python.git
   ```
 
-* Use `cookiecutter` from the local cookiecutter Git repository to create a
-  clean project for template dependency updates.
+* Use `cookiecutter` from the local cookiecutter Git repository to create an
+  instance of the template to use for updating Python package dependencies.
 
   ```shell
   $ cookiecutter PATH/TO/LOCAL/REPO
   ```
 
-* In the pristine project, perform the following steps to update the template's
-  package dependencies.
+* In the instance of the template, perform the following steps to update the
+  template's Python package dependencies.
 
   * Set up a virtual environment for developing the template (e.g., a direnv
     environment).
 
   * Use `poetry` or manually edit `pyproject.toml` to (1) make changes to the
-    package dependency list and (2) update the package dependency versions.
+    Python package dependency list and (2) update the versions of the package
+    dependencies.
 
-  * Use `poetry` to update the package dependencies and versions recorded in
-    the `poetry.lock` file.
+  * Use `poetry` to update the Python package dependencies and versions recorded
+    in the `poetry.lock` file.
 
-* Update `{{cookiecutter.project_name}}/pyproject.toml`.
+* Update `{{cookiecutter.__project_name}}/pyproject.toml`.
 
-  * Copy `pyproject.toml` from the pristine project to
-    `{{cookiecutter.project_name}}/pyproject.toml`.
+  * Copy `pyproject.toml` from the instance of the template to
+    `{{cookiecutter.__project_name}}/pyproject.toml`.
 
   * Restore the templated values in the `[tool.poetry]` section to the
     following:
@@ -409,7 +404,7 @@ package dependencies for the template.
     <!-- {% raw %} -->
     ```jinja
     [tool.poetry]
-    name = "{{ cookiecutter.package_name }}"
+    name = "{{ cookiecutter.__project_name }}"
     version = "0.1.0"
     description = ""
     license = "{% if cookiecutter.license == 'Apache License 2.0' %}Apache-2.0{% elif cookiecutter.license == 'BSD-3-Clause License' %}BSD-3-Clause{% elif cookiecutter.license == 'MIT License' %}MIT{% endif %}"
@@ -418,10 +413,10 @@ package dependencies for the template.
     ```
     <!-- {% endraw %} -->
 
-* Update `{{cookiecutter.project_name}}/poetry.lock`.
+* Update `{{cookiecutter.__project_name}}/poetry.lock`.
 
-  * Copy `poetry.lock` from the pristine project to
-    `{{cookiecutter.project_name}}/poetry.lock`.
+  * Copy `poetry.lock` from the instance of the template to
+    `{{cookiecutter.__project_name}}/poetry.lock`.
 
 * Commit the updated `pyproject.toml` and `poetry.lock` files to the Git
   repository.
@@ -452,7 +447,7 @@ package dependencies for the template.
 
 [---------------------------- REPOSITORY LINKS ----------------------------]: #
 
-[poetry-quick-reference]: {{cookiecutter.project_name}}/extras/references/Poetry-Quick-Reference.md
+[poetry-quick-reference]: {{cookiecutter.__project_name}}/extras/references/Poetry-Quick-Reference.md
 
 [vlxi-cookiecutter-python]: https://github.com/velexi-corporation/VLXI-Cookiecutter-Python
 
