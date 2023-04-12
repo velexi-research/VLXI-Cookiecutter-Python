@@ -205,12 +205,6 @@ code (i.e., coverage analysis).
   $ make fast-test
   ```
 
-* Run all of the tests and run `pylint` on all source code files.
-
-  ```shell
-  $ make full-test
-  ```
-
 ### 4.5. Cleaning the Development Directory
 
 * Use `make clean` to automatically remove temporary files and directories
