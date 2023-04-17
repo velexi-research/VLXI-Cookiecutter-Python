@@ -30,22 +30,22 @@ jobs:
         os: [ubuntu-latest, windows-latest, macOS-latest]
         arch: [x64{% if cookiecutter.ci_include_x86 == "yes" %}, x86{% endif %}]
         python-version: ["3.9", "3.10", "3.11"]
-        {% if cookiecutter.ci_include_x86 == "yes" %}
+{% if cookiecutter.ci_include_x86 == "yes" %}
         exclude:
           - os: macOS-latest
             arch: x86
-        {% endif %}
+{% endif %}
 
     defaults:
       run:
         shell: bash
 
     runs-on: {% raw %}${{ matrix.os }}{% endraw %}
-    {% if cookiecutter.ci_include_codecov == "yes" %}
+{% if cookiecutter.ci_include_codecov == "yes" %}
     env:
         codecov-arch: x64
         codecov-version: "3.11"
-    {% endif %}
+{% endif %}
     steps:
 
       # --- Check out code and setup Python
@@ -92,7 +92,7 @@ jobs:
         run: |
           source $VENV
           poetry run pytest --cov-report=xml
-      {% if cookiecutter.ci_include_codecov == "yes" %}
+{% if cookiecutter.ci_include_codecov == "yes" %}
       # --- Upload coverage statistics to codecov.io
 
       - name: Upload code coverage data to codecov.io
@@ -108,8 +108,8 @@ jobs:
           token: {% raw %}${{ secrets.CODECOV_TOKEN }}{% endraw %}
           file: ./coverage.xml
           fail_ci_if_error: true
-      {% endif %}
-  {% if cookiecutter.enable_github_pages == "yes" %}
+{% endif %}
+{% if cookiecutter.enable_github_pages == "yes" %}
   build-and-deploy-docs:
     name: Build and Deploy Documentation
 
@@ -183,4 +183,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-  {% endif %}
+{% endif %}
