@@ -27,10 +27,10 @@ jobs:
       fail-fast: false
 
       matrix:
-        os: [ubuntu-latest, windows-latest, macOS-latest]
+        os: [ubuntu-latest{% if cookiecutter.ci_include_windows == "yes" %}, windows-latest{% endif %}{% if cookiecutter.ci_include_macOS == "yes" %}, macOS-latest{% endif %}]
         arch: [x64{% if cookiecutter.ci_include_x86 == "yes" %}, x86{% endif %}]
         python-version: ["3.9", "3.10", "3.11"]
-{% if cookiecutter.ci_include_x86 == "yes" %}
+{% if cookiecutter.ci_include_x86 == "yes" and cookiecutter.ci_include_macOS == "yes" %}
         exclude:
           - os: macOS-latest
             arch: x86
