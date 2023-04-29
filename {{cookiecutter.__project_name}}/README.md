@@ -11,7 +11,7 @@
       <a href="https://{{ cookiecutter.github_repo_owner }}.github.io/{{ cookiecutter.__project_name }}/stable/"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/docs-stable-blue.svg"/></a>
     </td>
   </tr>
-  {% endif %}
+{% endif %}
   <tr>
     <td>Build Status</td>
     <td>
