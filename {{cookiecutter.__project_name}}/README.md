@@ -25,6 +25,7 @@
   <tr>
     <td colspan=2 align="center">
       <a href="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.__project_name }}/issues"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"/></a>
+      <a href="https://github.com/psf/black"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/code%20style-black-000000.svg"/></a>
     </td>
   </tr>
 </table>
