@@ -2,6 +2,21 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.6.0 (2023-05-21)
+==================
+### Cookiecutter Template
+* Change GitHub Actions CI workflow to exclude windows and macOS by default.
+* Add Cookiecutter parameters to include windows and macOS in CI workflow.
+* Add code style badge to README.md.
+* Fix pytest configuration bug in Makefile.
+* Fix bugs in GitHub Actions jobs for building and deploying documentation.
+* Fix error in documentation.
+* Update package dependency versions.
+
+### Cookiecutter Development
+* Update package dependency versions.
+
+-------------------------------------------------------------------------------
 0.5.0 (2023-04-09)
 ==================
 ### Cookiecutter Template
