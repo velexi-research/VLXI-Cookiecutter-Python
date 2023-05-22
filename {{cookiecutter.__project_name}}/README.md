@@ -11,7 +11,7 @@
       <a href="https://{{ cookiecutter.github_repo_owner }}.github.io/{{ cookiecutter.__project_name }}/stable/"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/docs-stable-blue.svg"/></a>
     </td>
   </tr>
-  {% endif %}
+{% endif %}
   <tr>
     <td>Build Status</td>
     <td>
@@ -25,6 +25,7 @@
   <tr>
     <td colspan=2 align="center">
       <a href="https://github.com/{{ cookiecutter.github_repo_owner }}/{{ cookiecutter.__project_name }}/issues"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"/></a>
+      <a href="https://github.com/psf/black"><img style="vertical-align: bottom;" src="https://img.shields.io/badge/code%20style-black-000000.svg"/></a>
     </td>
   </tr>
 </table>
@@ -203,12 +204,6 @@ code (i.e., coverage analysis).
 
   ```shell
   $ make fast-test
-  ```
-
-* Run all of the tests and run `pylint` on all source code files.
-
-  ```shell
-  $ make full-test
   ```
 
 ### 4.5. Cleaning the Development Directory

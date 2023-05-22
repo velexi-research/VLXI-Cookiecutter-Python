@@ -14,7 +14,7 @@ DOCS_DIR=docs/{{ cookiecutter.__project_name }}
 # Testing parameters
 NPROCS=auto
 
-PYTEST_OPTIONS=-n ${NPROCS} --cov-report=term-missing
+PYTEST_OPTIONS=-n ${NPROCS}
 PYTEST_PYLINT_OPTIONS=
 
 # --- Testing rules
@@ -25,6 +25,7 @@ PYTEST_PYLINT_OPTIONS=
 ## Run all tests
 test:
 	pytest ${PYTEST_OPTIONS} ${PYTEST_PYLINT_OPTIONS}
+	-make coverage-report
 
 ## Run tests in fail-fast mode (i.e., stop at first failure)
 fast-test:
@@ -35,7 +36,7 @@ fast-test:
 
 ## Generate basic coverage report
 coverage-report: .coverage
-	coverage report -m
+	coverage report --show-missing
 
 ## Generate coverage report in HTML format
 coverage-html: .coverage

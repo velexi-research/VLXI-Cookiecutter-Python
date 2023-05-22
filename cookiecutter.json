@@ -23,5 +23,13 @@
   "ci_include_x86": [
     "no",
     "yes"
+  ],
+  "ci_include_macOS": [
+    "no",
+    "yes"
+  ],
+  "ci_include_windows": [
+    "no",
+    "yes"
   ]
 }
