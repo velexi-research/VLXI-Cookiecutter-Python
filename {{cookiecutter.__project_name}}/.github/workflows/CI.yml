@@ -93,9 +93,9 @@ jobs:
           source $VENV
           poetry run pytest --cov-report=xml
 {% if cookiecutter.ci_include_codecov == "yes" %}
-      # --- Upload coverage statistics to codecov.io
+      # --- Upload coverage reports
 
-      - name: Upload code coverage data to codecov.io
+      - name: Upload coverage reports to Codecov
         # Only run for 'main' branch running on 'Linux' with the latest version of Python
         if: |
             github.ref_name == 'main' &&
