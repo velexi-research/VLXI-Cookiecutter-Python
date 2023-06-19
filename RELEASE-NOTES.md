@@ -11,6 +11,7 @@ Velexi Python Package Cookiecutter Release Notes
 * Polish code.
 
 ### Cookiecutter Development
+* Update package dependency versions.
 
 -------------------------------------------------------------------------------
 0.6.1 (2023-05-22)
