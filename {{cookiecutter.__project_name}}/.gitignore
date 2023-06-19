@@ -10,11 +10,19 @@
 # Python virtual environments
 .venv
 
-# --- Python files
+# --- Python
+
+# pyenv
+.python-version
 
 # compiled code
 __pycache__/
 *.py[cod]
+
+# setuptools
+/dist/
+*.egg-info/
+*.egg*
 
 # testing
 htmlcov/
@@ -23,6 +31,12 @@ htmlcov/
 .coverage.*
 .pytest_cache
 .tox/
+
+# pdoc auto-generated documentation
+docs/api
+
+# DotEnv configuration
+.env
 
 # --- Code editors
 
