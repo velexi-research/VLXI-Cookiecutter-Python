@@ -2,6 +2,17 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.6.3 (2023-06-19)
+==================
+### Cookiecutter Template
+* Polish .gitignore.
+* Polish pre-commit configuration.
+
+### Cookiecutter Development
+* Polish .gitignore.
+* Polish pre-commit configuration.
+
+-------------------------------------------------------------------------------
 0.6.2 (2023-06-18)
 ==================
 ### Cookiecutter Template

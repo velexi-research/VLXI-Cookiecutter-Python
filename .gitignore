@@ -1,4 +1,16 @@
-# --- Python files
+# --- Environments
+
+# direnv
+.direnv
+.envrc
+
+# conda
+.conda
+
+# Python virtual environment
+.venv
+
+# --- Python
 
 # compiled code
 __pycache__/
@@ -11,18 +23,6 @@ htmlcov/
 .coverage.*
 .pytest_cache
 .tox/
-
-# --- Environments
-
-# direnv
-.direnv
-.envrc
-
-# conda
-.conda
-
-# common manually-created Python virtual environments
-.venv
 
 # --- Code editors
 

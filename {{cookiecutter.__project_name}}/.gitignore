@@ -1,17 +1,3 @@
-# --- Python files
-
-# compiled code
-__pycache__/
-*.py[cod]
-
-# testing
-htmlcov/
-.cache
-.coverage
-.coverage.*
-.pytest_cache
-.tox/
-
 # --- Environments
 
 # direnv
@@ -21,8 +7,36 @@ htmlcov/
 # conda
 .conda
 
-# common manually-created Python virtual environments
+# Python virtual environment
 .venv
+
+# --- Python
+
+# pyenv
+.python-version
+
+# compiled code
+__pycache__/
+*.py[cod]
+
+# setuptools
+/dist/
+*.egg-info/
+*.egg*
+
+# testing
+htmlcov/
+.cache
+.coverage
+.coverage.*
+.pytest_cache
+.tox/
+
+# pdoc auto-generated documentation
+docs/{{cookiecutter.__project_name}}
+
+# DotEnv configuration
+.env
 
 # --- Code editors
 
