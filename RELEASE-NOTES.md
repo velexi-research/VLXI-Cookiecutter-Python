@@ -2,6 +2,17 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.6.2 (2023-06-18)
+==================
+### Cookiecutter Template
+* Fix pre-commit configuration bug.
+  - Add --allow-missing-credentials option for detect-aws-credentials.
+* Update package dependency versions.
+* Polish code.
+
+### Cookiecutter Development
+
+-------------------------------------------------------------------------------
 0.6.1 (2023-05-22)
 ==================
 ### Cookiecutter Template
