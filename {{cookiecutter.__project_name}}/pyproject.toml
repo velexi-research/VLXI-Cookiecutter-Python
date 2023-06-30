@@ -13,28 +13,28 @@ python = "{{ cookiecutter.python_version }}"
 optional = true
 
 [tool.poetry.group.dev.dependencies]
-black = "^22.10.0"
+black = "^23.0"
 flake8 = "<5.0.0"  # Unpin after compatibility with pytest-flake8 is fixed
-pre-commit = "^2.20.0"
-radon = "^5.1.0"
+pre-commit = "^3.2"
+radon = "^6.0"
 
 [tool.poetry.group.docs]
 optional = true
 
 [tool.poetry.group.docs.dependencies]
-pdoc = "^12.2.0"
+pdoc = "^14.0"
 
 [tool.poetry.group.test]
 optional = true
 
 [tool.poetry.group.test.dependencies]
-coverage = "^6.5.0"
-pylint = "^2.15.3"
-pytest = "^7.1.3"
-pytest-cov = "^4.0.0"
+coverage = "^7.0"
+pylint = "^2.15"
+pytest = "^7.4"
+pytest-cov = "^4.0"
 pytest-flake8 = "^1.1.1"
-pytest-xdist = "^2.5.0"
-tox = "^3.26.0"
+pytest-xdist = "^3.0"
+tox = "^4.6"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
