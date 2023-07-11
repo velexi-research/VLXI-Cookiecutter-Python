@@ -175,10 +175,11 @@ package dependencies.
        For commands to use other Python executables for the virtual environment,
        see the [Poetry Quick Reference][poetry-quick-reference].
 
-3. Install the Python package dependencies (including `dev` and `test` dependencies).
+3. Install the Python package dependencies (including `dev`, `docs`, and `test`
+   dependencies).
 
    ```shell
-   $ poetry install --with dev,test
+   $ poetry install --with dev,docs,test
    ```
 
 4. Install the git pre-commit hooks.
