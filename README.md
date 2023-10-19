@@ -84,6 +84,15 @@ Table of Contents
 * `ci_include_codecov`: flag indicating whether the CI workflow should upload
   coverage statistics to [Codecov][codecov]
 
+* `ci_include_x86`: flag indicating whether the CI workflow should include testing on
+  the x86 (32-bit) architecture
+
+* `ci_include_macOS`: flag indicating whether the CI workflow should include testing on
+  macOS
+
+* `ci_include_windows`: flag indicating whether the CI workflow should include testing on
+  Windows
+
 ### 1.2. Setting Up a New Project
 
 1. Prerequisites
