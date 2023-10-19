@@ -6,6 +6,7 @@ Velexi Python Package Cookiecutter Release Notes
 ==================
 ### Cookiecutter Template
 * Fix bugs and improve cache names in CI GitHub Actions workflows.
+* Update cookiecutter parameter list in README.
 * Update package dependencies.
 
 ### Cookiecutter Development
