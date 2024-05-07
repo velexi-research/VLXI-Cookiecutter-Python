@@ -2,6 +2,15 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.6.8 (2024-05-07)
+==================
+### Cookiecutter Template
+* Update package version dependencies.
+
+### Cookiecutter Development
+* Update package version dependencies.
+
+-------------------------------------------------------------------------------
 0.6.7 (2023-10-19)
 ==================
 ### Cookiecutter Template
