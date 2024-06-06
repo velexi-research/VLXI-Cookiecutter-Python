@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "Velexi Python Project Cookiecutter"
-version = "0.6.8"
+version = "0.6.9"
 description = "Template for Python projects"
 license = "Apache-2.0"
 authors = ["Kevin Chu <kevin@velexi.com>"]
