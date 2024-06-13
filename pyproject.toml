@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "Velexi Python Project Cookiecutter"
-version = "0.6.10"
+version = "0.6.11"
 description = "Template for Python projects"
 license = "Apache-2.0"
 authors = ["Kevin Chu <kevin@velexi.com>"]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.10"
 cookiecutter = "^2"
 pre-commit = "^3"
 black = "^24"
