@@ -14,7 +14,7 @@ optional = true
 
 [tool.poetry.group.dev.dependencies]
 black = "^24"
-flake8 = "<5.0.0"  # Unpin after compatibility with pytest-flake8 is fixed
+flake8 = "^7"
 pre-commit = "^3"
 radon = "^6"
 
@@ -31,12 +31,11 @@ optional = true
 coverage = "^7"
 pytest = "^8"
 pytest-cov = "^5"
-pytest-flake8 = "^1.1"
 pytest-xdist = "^3"
 
 [tool.pytest.ini_options]
 minversion = "6.0"
-addopts = "-ra --doctest-modules --flake8 --cov --cov-report="
+addopts = "-ra --doctest-modules --cov --cov-report="
 testpaths = [
     "src",
     "tests"
