@@ -5,6 +5,7 @@ Velexi Python Package Cookiecutter Release Notes
 0.7.1 (2025-06-17)
 ==================
 ### Cookiecutter Template
+* Remove obsolete Makefile variables.
 * Update package dependencies to address security vulnerabilities.
 
 ### Cookiecutter Development
