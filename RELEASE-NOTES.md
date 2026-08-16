@@ -2,6 +2,16 @@ Velexi Python Package Cookiecutter Release Notes
 ================================================
 
 -------------------------------------------------------------------------------
+0.7.4 (2026-08-16)
+==================
+### Cookiecutter Template
+* Polish dot-envrc file.
+* Bump Python version requirement.
+
+### Cookiecutter Development
+* Update package dependencies.
+
+-------------------------------------------------------------------------------
 0.7.3 (2025-07-09)
 ==================
 ### Cookiecutter Template
