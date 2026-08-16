@@ -8,8 +8,8 @@ authors = ["Kevin Chu <kevin@velexi.com>"]
 [tool.poetry.dependencies]
 python = "^3.10"
 cookiecutter = "^2"
-pre-commit = "^3"
-black = "^24"
+pre-commit = "^4"
+black = "^26"
 flake8 = "^7"
 
 [build-system]
